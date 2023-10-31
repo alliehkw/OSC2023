@@ -44,6 +44,26 @@ function my_mce_before_init( $settings ) {
             ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
             ,'classes' => 'h6'
         )
+        ,array(
+            'title' => 'All Caps'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'allCaps'
+        )
+        ,array(
+            'title' => 'Small Space'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'spacer small'
+        )
+        ,array(
+            'title' => 'Medium Space'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'spacer medium'
+        )
+        ,array(
+            'title' => 'Center on Mobile'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'mobile-center'
+        )
     );
     $settings['style_formats'] = json_encode( $style_formats );
     return $settings;

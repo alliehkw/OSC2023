@@ -3,30 +3,118 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-
+    line-height: 106.25%;
+    font-family: 'Petersburg, Regular';
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    font-size: 36px;
+    @include breakpoint(medium up) {
+        font-size: 48px;
+    }
+    @include breakpoint(large up) {
+        font-size: 64px;
+    }
 }
 
 h2, .h2 {
-
+    line-height: 108.33%;
+    font-family: 'Petersburg, Regular';
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    font-size: 30px;
+    @include breakpoint(medium up) {
+        font-size: 46px;
+    }
+    @include breakpoint(large up) {
+        font-size: 48px;
+    }
 }
 
 h3, .h3 {
-
+    line-height: 111.11%;
+    font-family: 'Petersburg, Regular';
+    font-weight: 400;
+    margin: 0;
+    font-size: 19px;
+    @include breakpoint(medium up) {
+        font-size: 31px;
+    }
+    @include breakpoint(large up) {
+        font-size: 36px;
+    }
 }
 
 h4, .h4 {
-
+    line-height: 120%;
+    font-weight: 450;
+    font-family: 'Apertura, Regular';
+    margin: 0;
+    font-size: 18px;
+    @include breakpoint(medium up) {
+        font-size: 25px;
+    }
+    @include breakpoint(large up) {
+        font-size: 26px;
+    }
 }
 
 h5, .h5 {
-
+  line-height: 150%;
+  font-weight: 450;
+  font-family: 'Apertura, Regular';
+  letter-spacing: -0.05em;
+  margin: 0;
+  font-size: 17px;
+  @include breakpoint(medium up) {
+      font-size: 20px;
+  }
 }
 
 h6, .h6 {
-
+    line-height: 150%;
+    font-family: 'Apertura, Regular';
+    font-weight: 400;
+    margin: 0;
+    font-size: 16px;
 }
 
-p, ul, ol, li {
+p, a {
+    margin: 0;
+    font-size: 16px;
+    @include breakpoint(medium up) {
+        font-size: 18px;
+    }
+    @include breakpoint(large up) {
+        font-size: 20px;
+    }
+}
 
+.allCaps {
+    font-size: 0.875em;
+    line-height: 142.857%;
+    font-weight: 450;
+    text-transform: uppercase;
+    letter-spacing: 0.0875em;
+  }
+
+// p, ul, ol, li {
+
+// }
+
+li {
+    padding: 0 10px;
+}
+
+a {
+    color: get-color(green-04);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: get-color(green-04);
+    text-decoration: underline;
+    font-weight: bold;
 }
 

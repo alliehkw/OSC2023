@@ -62,18 +62,47 @@
 
 @import '../../../node_modules/foundation-sites/scss/util/util';
 
+// Custom Typography
+@font-face {
+  font-family: "Apertura, Regular";
+  src:
+    url("./fonts/Apertura/Regular.otf") format("opentype")
+}
+@font-face {
+  font-family: "Petersburg, Regular";
+  src:
+    url("./fonts/Petersburg/Regular.otf") format("opentype")
+}
+
 // 1. Global
 // ---------
-
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #000000,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
+  secondary: #008771,
+  success: #04D2A1,
+  warning: #FCBD06,
+  alert: #E81F5B,
+  osc-brand-color: #008771,
+  green-01: #DDF9F4,
+	green-02: #98ECDE,
+	green-03: #19B69C,
+	green-04: #008771,
+	green-05: #004154,
+	green-06: #015143,
+	green-07: #003028,
+	body-text: #1C3A49,
+	secondary-bg: #F0F6F9,
+	gray-01: #EFF7FB,
+	gray-02: #C4DAE3,
+	gray-03: #8AA0AA,
+	gray-04: #586C75,
+	gray-05: #28404B,
+	gray-06: #112E3D,
+	star-color: #FCBD06,
+	star-background: #C4DAE3,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -81,8 +110,8 @@ $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: get-color(body-text);
+$body-font-family: 'Apertura, Regular';
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -131,17 +160,18 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Petersburg, Regular';
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
+// These styles aren't changing with screen size so I'm defining it is typography.scss 
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 30),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
@@ -149,16 +179,24 @@ $header-styles: (
   ),
   medium: (
     'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
+    'h2': ('font-size': 36),
     'h3': ('font-size': 31),
     'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+  large: (
+    'h1': ('font-size': 64),
+    'h2': ('font-size': 48),
+    'h3': ('font-size': 36),
+    'h4': ('font-size': 26),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
   ),
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
-$header-small-font-color: $medium-gray;
+$header-small-font-color: get-color(gray-06);
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
@@ -224,20 +262,20 @@ $input-error-font-weight: $global-weight-bold;
 // ------------
 
 $accordion-background: $white;
-$accordion-plusminus: true;
-$accordion-title-font-size: rem-calc(12);
-$accordion-item-color: $primary-color;
-$accordion-item-background-hover: $light-gray;
-$accordion-item-padding: 1.25rem 1rem;
-$accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: $body-font-color;
-$accordion-content-padding: 1rem;
+$accordion-plusminus: false;
+$accordion-title-font-size: inherit;
+$accordion-item-color: get-color(green-04);
+$accordion-item-background-hover: $white;
+$accordion-item-padding: 40px 0 0 0;
+$accordion-content-background: white;
+$accordion-content-border: 0;
+$accordion-content-color: get-color(body-text);
+$accordion-content-padding: 24px 0 0 0;
 
 // 8. Accordion Menu
 // -----------------
 
-$accordionmenu-padding: $global-menu-padding;
+$accordionmenu-padding: 0;
 $accordionmenu-nested-margin: $global-menu-nested-margin;
 $accordionmenu-submenu-padding: $accordionmenu-padding;
 $accordionmenu-arrows: true;
@@ -733,10 +771,10 @@ $reveal-background: $white;
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
-$reveal-border: 1px solid $medium-gray;
-$reveal-radius: $global-radius;
+$reveal-border: 0;
+$reveal-radius: 0;
 $reveal-zindex: 1005;
-$reveal-overlay-background: rgba($black, 0.45);
+$reveal-overlay-background: rgba($black, 0.60);
 
 // 48. Slider
 // ----------

@@ -1,13 +1,125 @@
-.content-block {
-	&.lt-gray {
-		background-color: $light-gray;
-	}
-	
+.off-canvas-wrapper  {
+	height: 100vh;
+	overflow-y: auto;
 }
+
+// SCROLL BAR
+// -----------
+
+div::-webkit-scrollbar {
+	background-color: get-color(gray-02);
+	border-radius: 50px;
+  }
+  
+  div::-webkit-scrollbar:horizontal {
+	height: 8px;
+  }
+  
+  div::-webkit-scrollbar:vertical {
+	width: 8px;
+  }
+  
+  div::-webkit-scrollbar-thumb {
+	background-color: get-color(osc-brand-color);
+	border-radius: 50px;
+  }
+  
+  div::-webkit-scrollbar-track {
+	background-color: var(--gray-02);
+	border-radius: 0.25em;
+  }
+  
+  .smooth-scroll {
+	transition: scroll-behavior 0.5s ease-in-out;
+  }
+
+// CONTENT BLOCK
+// --------------
+
+.content-block {
+	@include breakpoint(large up) {
+		padding: 96px 0;
+	}
+	@include breakpoint(medium down) {
+		padding: 64px 32px;
+	}
+	@include breakpoint(small down) {
+		padding: 48px 20px;
+	}
+	//custom padding
+	&.no_padding_bottom {
+		padding-bottom: 0;
+	}
+	&.no_padding_top {
+		padding-top: 0;
+	}
+	&.no_padding_top_or_bottom {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	// overlap sibling --> used for forms overlaping heros
+	&.overlap-sibling {
+		margin-top: -100px;
+	}
+	&.white {
+		background-color: white;
+		h1, h2, h3, h4, h5, h6 {
+			color: get-color(gray-06);
+		}
+	}
+	&.light_blue {
+		background-color: get-color(gray-01);
+		color: get-color(gray-06);
+		h1, h2, h3, h4, h5, h6 {
+			color: get-color(gray-06);
+		}
+	}
+	&.light_green {
+		background-color: get-color(green-01);
+		color: get-color(green-06);
+		h1, h2, h3, h4, h5, h6 {
+			color: get-color(green-07);
+		}
+	}
+}
+
+// HERO
+// --------------
 
 .hero {
-
+	background-color: get-color(osc-brand-color);
+	color: white;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin: auto;
+	align-items: center;
+	&.tall {
+		height: 650px;
+		@include breakpoint(medium down) {
+			height: 400px;
+		}
+		@include breakpoint(small down) {
+			height: 350px;
+		}
+	}
+	&.short {
+		height: 472px;
+		@include breakpoint(medium down) {
+				height: 400px;
+			}
+		@include breakpoint(small down) {
+			height: 350px;
+		}
+	}
+	p {
+		margin-bottom: 16px;
+	}
 }
+
+
+// HALF BLOCK
+// --------------
 
 .half-block {
 	&.right {
@@ -39,21 +151,385 @@
 	}
 }
 
+// CONTENT GRID
+// --------------
 .content-grid {
-	.spacer {
+	// center content on mobile
+	.mobile-center {
+		@include breakpoint(small down) {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+	// reverse the order of content on mobile
+	.reverse_order {
+		@include breakpoint(small down) {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+	.button {
+		font-size: 15px;
+		margin: 0;
+		vertical-align: middle;
+		font-family: 'Apertura, Regular';
+		letter-spacing: 0.046875em;
+		text-transform: uppercase;
+		font-weight: 450;
+		border-radius: 0.125em;
+		border: solid 0.0625em;
+		padding: 10px 16px;
+		padding-top: 14px;
+		background-color: transparent;
+		&.green {
+			background-color: get-color(osc-brand-color);
+			border-color: get-color(osc-brand-color);
+			color: white;
+		}
+		&.green:hover {
+			background-color: get-color(green-06);
+		}
+		&.green:disabled {
+			border: 3px solid #B2DBD4;
+		}
+		&.white {
+			background-color: white;
+			border-color: get-color(gray-06);
+			color: get-color(gray-06);
+		}
+		&.white:hover {
+			background-color: get-color(gray-06);
+			color: white;
+		}
+		&.transparent {
+			background-color: transparent;
+			color: get-color(osc-brand-color);
+			border-color: transparent;
+		  }
+	}
+	// buttons
+	.buttons {
+		gap: 16px;
+		margin: 0;
+		a {
+			text-decoration: none;
+		}
+	}
+	// doctor modal section
+	.doctor-modals {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.doctors {
+		display: flex;
+		text-align: center;
+		justify-content: space-evenly;
+		gap: 80px;
+		@include breakpoint (medium down) {
+			gap: 0;
+			flex-wrap: wrap;
+		}		
+		@include breakpoint (small down) {
+			gap: 24px;
+		}
+		.doctor {
+			display: flex;
+			flex-direction: column;
+			@include breakpoint (medium down) {
+				max-width: 45%;
+			}
+			@include breakpoint (small down) {
+				max-width: 100%;
+			}
+			.image, .specialty {
+				margin-bottom: 20px;
+			}
+			.name {
+				margin-bottom: 4px;
+				color: get-color(green-04);
+				font-weight: bold;
+				font-size: 20px;
+			}
+			.profile {
+				padding: 0;
+				text-decoration: none;
+			}
+		}
+	}
+
+	// stats card
+	.statistic {
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@include breakpoint(medium up) {
+			padding: 40px;
+		}
+		.stat_value {
+			color: white;
+			font-family: 'Petersburg, Regular';
+			font-size: 40px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 120%;
+			text-align: center;
+			background-color: get-color(osc-brand-color);
+			border-radius: 100px;
+			padding: 40px;
+			margin: auto;
+			margin-bottom: 32px;
+			min-width: 122px;
+		}
+	}
+	// standard spacer
+	div.spacer {
+		&.tiny {
+			height: 8px;
+		}
 		&.small {
-			height: rem-calc(20);
+			height: 24px;
+		}
+		&.standard {
+			height: 24px;
+			@include breakpoint(medium up) {
+				height: 32px;
+			}
 		}
 		&.medium {
-			height: rem-calc(40);
+			height: 24px;
+			@include breakpoint(medium up) {
+				height: 40px;
+			}
 		}
 		&.large {
-			height: rem-calc(80);
+			height: 48px;
 		}
+		&.xl {
+			height: 40px;
+			@include breakpoint(medium up) {
+				height: 56px;
+			}
+
+		}
+		&.tons {
+			height: 48px;
+			@include breakpoint(medium up) {
+				height: 64px;
+			}
+
+		}
+	}
+	// extra padding below text in richtexts
+	p.spacer.medium, h1.spacer.medium, h2.spacer.medium, h3.spacer.medium, h4.spacer.medium, h5.spacer.medium, h6.spacer.medium {
+		margin-bottom: 24px;
+		@include breakpoint(medium up) {
+			margin-bottom: 40px;
+		}
+	}
+	p.spacer.small, h1.spacer.small, h2.spacer.small, h3.spacer.small, h4.spacer.small, h5.spacer.small, h6.spacer.small {
+		margin-bottom: 24px;
+	}
+	// adding padding below images so that on mobile there is space between images and text when they go full width
+	// excluding medium-12 because it's already always full screen and therefore already has its desired full screen padding 
+	:not(.medium-12) > img {
+		@include breakpoint(small down) {
+			padding: 24px 0;
+			// need this for when we use richText to insert media and it has overlays
+			&.no-extra-padding {
+				padding: 0;
+			}
+		}
+	}
+	// accordion
+	.accordion-item {
+		padding: 0;
+		.accordion-title {
+			display: flex;
+			justify-content: space-between;
+			text-decoration: none;
+			font-size: 14px;
+			padding-bottom: 0;
+			border-bottom: 1px solid get-color(gray-02);
+			&:hover {
+				color: get-color(green-04);
+				font-weight: bold;
+			}
+			&:focus {
+				color: get-color(green-04);
+			}
+		}
+		.accordion-title::after {
+			content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='M6.9375 9L12.9375 15L18.9375 9' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		}
+		&.is-active .accordion-title::after {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 24' fill='none'%3E%3Cpath d='M18.9375 15L12.9375 9L6.9375 15' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		}
+	}
+	// content slider
+	div.content-slider {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        max-width: 100%;
+		gap: 16px;
+		@include breakpoint(medium up) {
+			gap: 24px;
+		}
+		.slide {
+			display: inline-block;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			padding: 0;
+			max-height: 445px;
+			margin-bottom: 32px;
+			@include breakpoint(small down) {
+				max-height: 355px;
+				margin-bottom: 24px;
+			}
+			img {
+				display: block;
+				height: 100%;
+				max-height: 445px;
+				@include breakpoint(small down) {
+					max-height: 355px;
+				}
+				width: auto;
+				border-radius: 4px;
+				padding: 0;
+			}
+		}
+	}
+	// remove parent padding if form exists so that you can position form overlapping hero
+	&:has(> .grid-container > .grid-x > .cell > .gform_wrapper) {
+		padding: 0;
+		overflow-y: auto;
+		background-color: transparent;
+		width: 100%;
+		// margin-top: -100px;
+		.cell {
+			background-color: transparent
+		}
+	}
+
+	div.grid-container > div.grid-x > div.cell > p.form-overlap:not(:empty) + div.content-block {
+		margin-top: -100px;
+	  }
+	// forms
+	.gform_wrapper {
+		background-color: white;
+		border: solid 2px get-color(gray-02);
+		border-radius: 4px;
+		padding: 104px 102px;
+		margin-bottom: 56px;
+		@include breakpoint(medium down) {
+			padding: 48px 32px;
+		}
+		@include breakpoint(small down) {
+			padding: 40px 16px;
+		}
+		&.gravity-theme .gsection {
+			padding: 0;
+			border: none;
+		}
+		.gsection_title {
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 450;
+			line-height: 28px;
+			color: get-color(gray-06);
+			font-family: 'Apertura, Regular';
+			margin-top: 56px;
+			@include breakpoint(medium down) {
+				margin-top: 48px;
+			}
+		}
+		.button {
+			width: 100%;
+			background-color: get-color(green-04);
+			color: white;
+			border-radius: 2px;
+			text-transform: uppercase;
+			padding: 10px 16px;
+			padding-top: 14px;
+		}
+		// inputs are always full width on tablet and mobile
+		&.gravity-theme .gfield.gfield--width-half {
+			@include breakpoint(medium down) {
+				grid-column: span 12;
+			}
+		}
+		&.gravity-theme .gform_fields {
+			grid-row-gap: 32px;
+			@include breakpoint(medium down) {
+				grid-row-gap: 24px;
+			}
+		}
+		&.gravity-theme .gform_drop_area {
+			background: none;
+			border-radius: 2px;
+			border: 1px dashed get-color(gray-03);
+			button {
+				// hide the text
+				text-indent: -9999px;
+				white-space: nowrap;
+				overflow: hidden;
+				background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='65' viewBox='0 0 64 65' fill='none'%3E%3Cg clip-path='url(%23clip0_1763_40911)'%3E%3Cpath d='M37.3359 8.25V18.9167C37.3359 19.6239 37.6169 20.3022 38.117 20.8023C38.6171 21.3024 39.2954 21.5833 40.0026 21.5833H50.6693' stroke='%23112E3D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M45.3359 56.25H18.6693C17.2548 56.25 15.8982 55.6881 14.898 54.6879C13.8978 53.6877 13.3359 52.3312 13.3359 50.9167V13.5833C13.3359 12.1688 13.8978 10.8123 14.898 9.8121C15.8982 8.8119 17.2548 8.25 18.6693 8.25H37.3359L50.6693 21.5833V50.9167C50.6693 52.3312 50.1074 53.6877 49.1072 54.6879C48.107 55.6881 46.7504 56.25 45.3359 56.25Z' stroke='%23112E3D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 45.5835V29.5835' stroke='%23112E3D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M25.3359 38.9165L32.0026 45.5832L38.6693 38.9165' stroke='%23112E3D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1763_40911'%3E%3Crect width='64' height='64' fill='white' transform='translate(0 0.25)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+				width: fit-content;
+				background-color: white;
+				width: 64px;
+  				height: 65px; 
+			}
+			// input custom text
+			.gform_drop_instructions {
+				color: get-color(gray-04);
+			}
+			.gform_drop_instructions::after {
+				content: "choose files to upload";
+			}
+		}
+	}
+	.gform-field-label {
+		color: get-color(gray-06);
+	}
+	.gfield_select, .ginput_container>input, .textarea {
+		background-color: get-color(gray-01);
+		border: solid 1px get-color(gray-02);
+		border-radius: 2px;
+		box-shadow: none;
+		&:hover {
+			border-color: get-color(gray-06);
+		}
+		&:disabled {
+			color: get-color(gray-03);
+			border-color: get-color(gray-01);
+		}
+		// &::after {
+		// 	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cg clip-path='url(%23clip0_2174_2751)'%3E%3Cpath d='M5 8.43896L10 13.439L15 8.43896' stroke='%23587584' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2174_2751'%3E%3Crect width='20' height='20' fill='white' transform='translate(0 0.938965)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+		// }
+	}
+	.ginput_container_date input {
+		font-style: italic;
+	}
+	.gform_title {
+		display: none;
 	}
 }
 
-.spacer {
+// Remove content-block padding when looping through child content for pages that have side bars
+.child-content .content-block {
+	padding: 0;
+}
+
+// SPACER
+// --------------
+div.spacer {
 	&.small {
 		height: rem-calc(20);
 	}
@@ -64,3 +540,79 @@
 		height: rem-calc(80);
 	}
 }
+
+img.board-cert {
+	width: 271;
+	height: 299;
+	@include breakpoint (small down) {
+		width: 200px;
+		height: auto;
+	}
+}
+
+.reveal.large.doctor-modal {
+	padding: 72px;
+	@include breakpoint (medium down) {
+		padding: 24px;
+	}
+	@include breakpoint (small down) {
+		padding: 20px;
+	}
+	.image-and-links {
+		display: flex;
+		flex-direction: column;
+		@include breakpoint (medium down) {
+			flex-direction: row;
+			width: auto;
+			align-items: center;
+			margin-bottom: 24px;
+			img {
+				height: 160px;
+			}
+		}
+		@include breakpoint (small down) {
+			flex-direction: column;
+			width: 100%;
+			align-items: flex-start;
+		}
+		text-align: center;
+		gap: 12px;
+		a.button {
+			background-color: transparent;
+			color: get-color(green-04);
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: 4px;
+			margin: 0;
+			@include breakpoint (medium down) {
+				width: fit-content;
+			}
+		}
+	}
+	.summary-modal {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		color: get-color(gray-05);
+		font-size: 16px;
+		h3 {
+			color: get-color(gray-06);
+		}
+		.certs {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			@include breakpoint (medium down) {
+				justify-content: left;
+				gap: 35px;
+			}
+		}
+		.cert-image img {
+			height: 57px;
+			@include breakpoint (small down) {
+				height: 42px;
+			}
+		}
+	}
+}			
+

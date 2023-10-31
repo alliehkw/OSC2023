@@ -9,6 +9,7 @@ function joints_theme_support() {
 	// Default thumbnail size
 	set_post_thumbnail_size(125, 125, true);
 
+	// NOTE : force image sizing, eg: for blogs 
 	add_image_size( 'xlarge', 1200, 1200, true );
 
 	// Add RSS Support

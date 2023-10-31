@@ -59,6 +59,7 @@ CSS3 GRADIENTS.
 	background-image: linear-gradient(to bottom, $from, $to);
 }
 
+// NOTE : aspect-ratio works for images as well but it's mostly for divs 
 @mixin aspect-ratio($width, $height) {
   position: relative;
   &:before {

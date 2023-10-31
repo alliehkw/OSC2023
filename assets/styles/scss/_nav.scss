@@ -1,0 +1,185 @@
+.off-canvas {
+    background-color: white;
+}
+
+li.menu-item {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 20px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.menu li, .menu a, .menu>li.is-active>a, .menu .active>a {
+    color: get-color(gray-06);
+    background-color: transparent;
+    font-size: 14px; 
+    text-decoration: none;
+    &:hover {
+        color: get-color(gray-06);
+        background-color: transparent;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+.menu li, .menu a  {
+    padding: 0;
+    margin-right: 16px;
+}
+
+.dropdown.menu>li>a {
+    padding: 0;
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent>a, 
+.dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a  {
+    padding: 0;
+    margin-right: 36px;
+}
+
+.dropdown.menu.medium-horizontal>li.opens-right>.is-dropdown-submenu {
+    margin-top: 28px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.menu li.nav-button {
+    padding: 0;
+    font-size: 15px;
+    margin: 0;
+    vertical-align: middle;
+    font-family: 'Apertura, Regular';
+    letter-spacing: 0.046875em;
+    text-transform: uppercase;
+    font-weight: 450;
+    a {
+        padding: 10px 16px;
+		padding-top: 14px;
+        border-radius: 0.125em;
+        border: solid 0.0625em;
+    }
+     // TO DO : change nav colors based on page location and scroll position
+    &.low-contrast a {
+        // TO DO : i made the color red for now as a place holder but it needs to be changed in the final 
+        // color: white;
+        color: red;
+        border: transparent;
+        background-color: transparent;
+    }
+    &.high-contrast a {
+        color: white;
+        background-color: get-color(green-04);
+    }
+} 
+
+.top-bar {
+    background-color: white;
+    padding: 0 60px;
+    height: 72px;
+    @include breakpoint(small down) {
+        padding: 0;
+    }
+    ul {
+        background-color: white;
+    }
+    .show-for-small-only {
+        display: flex;
+        justify-content: flex-end;
+        padding: 24px 20px;
+    }
+}
+
+.top-bar-right ul#main-nav {
+    gap: 16px;
+    align-items: center;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+li.logo a img {
+    margin-right: 16px;
+}
+// TO DO : fix hambergur nav
+.dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
+.accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
+    border-style: none;
+    width: 0;
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    right: -4px;
+    // white
+    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    // black
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
+.accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
+.accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
+    transform: none;
+    // white 
+    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    // black
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.accordion-menu .is-accordion-submenu a, .accordion-menu a {
+    padding: 20px ;
+}
+
+.close-button, .close-button.medium {
+    right: 11px;
+    color: get-color(gray-06);
+}
+
+.menu-icon:after {
+    background: get-color(gray-02); 
+    box-shadow: 0 7px 0 get-color(gray-02), 0 14px 0 get-color(gray-02);
+}
+
+.sidebar-nav {
+    margin-bottom: 24px;
+    .menu {
+        display: flex;
+        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        border: 1px solid get-color(gray-02);
+        font-weight: 450;
+        a {
+            padding: 0;
+        }
+        .active a {
+            color: get-color(osc-brand-color);
+        }
+        .sub-menu {
+            li a {
+                margin: 0;
+                padding: 10px;
+                padding-bottom: 0;
+                text-transform: none;
+                display: list-item;
+                list-style-type: disc;
+                list-style-position: inside;
+                color: get-color(gray-06);
+            }
+            li.active a {
+                color: get-color(osc-brand-color);
+            }
+        }
+    }
+    
+}
+
+// TO DO : why does the text appear behind the sidenav text (see our research and company drop down for example)
+// why does the nav bar refresh all jumpy
+// why isnt the sticky nav or the hambergur working? 
