@@ -1,5 +1,3 @@
-//Jquery element animations on scroll
-
 (function ($) {
   /**
    * Copyright 2012, Digital Fusion
@@ -11,7 +9,6 @@
    *     the user visible viewport of a web browser.
    *     only accounts for vertical position, not horizontal.
    */
-
   $.fn.visible = function (partial) {
     var $t = $(this),
       $w = $(window),
@@ -21,13 +18,21 @@
       _bottom = _top + $t.height(),
       compareTop = partial === true ? _bottom : _top,
       compareBottom = partial === true ? _top : _bottom;
-
     return compareBottom <= viewBottom && compareTop >= viewTop;
   };
 })(jQuery);
 
-$(document).ready(function () {
-  $(".content-slider-container").slick({
-    // TO DO : content slider
-  });
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: "auto",
+  slidesPerGroup: 1,
+  spaceBetween: 24,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });

@@ -107,24 +107,6 @@ if (get_sub_field('custom_padding')) {
                                 endwhile;
                             endif;
                         echo '</div>';
-                    elseif($contentType == 'content_slider') :
-                        echo '<div class="grid-x grid-padding-x content-slider">';
-                            if( have_rows('content_slides') ): 
-                                while( have_rows('content_slides') ): the_row(); 
-                                $sliderType = get_sub_field('slide_type');
-                                    echo '<div class="small-12 medium-shrink cell slide">';
-                                        if($sliderType === 'rich_text') :
-                                            echo '<p>rich text</p>';
-                                        elseif($sliderType === 'image') :
-                                            $imageobject = get_sub_field('image');
-                                            if( !empty($imageobject) ):
-                                                echo '<img alt="' . $imageobject['title'] . '" src="' . $imageobject['sizes']['medium'] . '" srcset="' . $imageobject['sizes']['medium_large'] .' '. $imageobject['sizes']['medium_large-width'] .'w, '. $imageobject['sizes']['medium'] .' '.  $imageobject['sizes']['medium-width'] .'w, '. $imageobject['sizes']['thumbnail'] .' '.  $imageobject['sizes']['thumbnail-width'] .'w">';
-                                            endif;
-                                        endif;
-                                    echo '</div>';      
-                                endwhile;
-                            endif;
-                        echo '</div>';
                     elseif($contentType == 'doctor_modal') :
                         $sliderType = get_sub_field('section_summary');
                         echo '<div class="grid-x grid-padding-x doctor-modals">';
@@ -202,7 +184,28 @@ if (get_sub_field('custom_padding')) {
                             endif;
                             echo '</div>';
                         echo '</div>';
-                endif;
+                    elseif($contentType == 'accolades') :
+                        if( have_rows('accolades') ): 
+                            echo '<div class="grid-x grid-padding-x accolades">';
+
+                            while( have_rows('accolades') ): the_row();
+                                $starRating = get_sub_field('star_rating');
+                                $brandLogo = get_sub_field('brand_logo');
+                                    echo '<div class="small-12 medium-shrink cell">';
+                                        echo '<div class="accolade">';
+                                            echo '<div class="star_rating">';
+                                                echo '<div class="stars" style="--stars: ' . esc_attr($starRating) . ';"></div>';
+                                            echo '</div>';
+                                            echo '<div class="logo-image">';
+                                                echo '<img alt="' . $brandLogo['title'] . '" src="' . $brandLogo['sizes']['medium'] . '" srcset="' . $brandLogo['sizes']['medium_large'] .' '. $brandLogo['sizes']['medium_large-width'] .'w, '. $brandLogo['sizes']['medium'] .' '.  $brandLogo['sizes']['medium-width'] .'w, '. $brandLogo['sizes']['thumbnail'] .' '.  $brandLogo['sizes']['thumbnail-width'] .'w">';
+                                            echo '</div>';
+                                        echo '</div>';
+                                    echo '</div>';
+                                endwhile;
+                                echo '</div>';
+
+                        endif;
+                    endif;
                 ?>
             </div>
             <?php endwhile; endif; ?>

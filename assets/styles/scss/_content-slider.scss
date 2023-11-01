@@ -1,0 +1,127 @@
+// needed to overwrite a lot of their styling to have it look how we want, hence the !importants 
+.content-slider.content-block {
+	&.light_blue {
+		background-color: get-color(gray-01);
+	}
+	&.light_green {
+		background-color: get-color(green-01);
+	}
+	margin-right: 0;
+	@include breakpoint(xlarge up) {
+		padding: 72px 96px;
+		padding-right: 0;
+	}
+    @include breakpoint(large down) {
+        padding: 72px 60px;
+        padding-right: 0;
+    }
+    @include breakpoint(medium down) {
+        padding: 64px 32px;
+        padding-right: 0;
+    }
+    @include breakpoint(small down) {
+        padding: 48px 20px;
+        padding-right: 0;
+    }
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto !important;
+    width: auto !important;
+}
+
+.swiper-slide div.slide-image {
+    height: 445px !important;
+    width: 588px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 4px;
+        @include breakpoint (small down) {
+            height: 180px !important;
+            width: 319px !important;
+        }
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
+
+.swiper-button-next {
+	width: auto !important;
+	height: auto !important;
+	right: 0 !important;
+	top: 0 !important;
+	margin-top: 222.5px !important;
+	transform: translateY(-50%) !important;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='67' height='68' viewBox='0 0 67 68' fill='none'%3E%3Ccircle cx='33.6172' cy='33.8926' r='33.3828' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M46.523 34.6566C46.9958 34.2571 46.9958 33.5284 46.523 33.1289L38.637 26.4657C38.4261 26.2875 38.1106 26.314 37.9324 26.525C37.7542 26.7359 37.7807 27.0514 37.9916 27.2296L45.3042 33.4082H20.8555C20.5793 33.4082 20.3555 33.6321 20.3555 33.9082C20.3555 34.1844 20.5793 34.4082 20.8555 34.4082H45.2675L37.9916 40.5558C37.7807 40.7341 37.7542 41.0495 37.9324 41.2605C38.1106 41.4714 38.4261 41.4979 38.637 41.3197L46.523 34.6566Z' fill='%23112E3D'/%3E%3C/svg%3E");
+	&::after {
+		content: none !important;
+	}
+	@include breakpoint (small down) {
+		content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34' fill='none'%3E%3Ccircle cx='16.6914' cy='16.6914' r='16.6914' transform='matrix(-1 0 0 1 34 0)' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.7635 17.0734C23.9999 16.8737 23.9999 16.5093 23.7635 16.3095L19.8205 12.978C19.715 12.8889 19.5573 12.9021 19.4682 13.0076C19.379 13.1131 19.3923 13.2708 19.4978 13.3599L23.1541 16.4492H10.9297C10.7916 16.4492 10.6797 16.5612 10.6797 16.6992C10.6797 16.8373 10.7916 16.9492 10.9297 16.9492H23.1357L19.4978 20.023C19.3923 20.1121 19.379 20.2699 19.4682 20.3753C19.5573 20.4808 19.715 20.4941 19.8205 20.405L23.7635 17.0734Z' fill='%23112E3D'/%3E%3C/svg%3E");
+		margin-top: 90px !important;
+        display: none !important;
+	}
+}
+
+.swiper-button-prev {
+	width: auto !important;
+	height: auto !important;
+	left: 0 !important;
+	top: 0 !important;
+	margin-top: 222.5px !important;
+	transform: translateY(-50%) !important;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='67' height='68' viewBox='0 0 67 68' fill='none'%3E%3Ccircle cx='33.3828' cy='33.8926' r='33.3828' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.477 34.6566C20.0042 34.2571 20.0042 33.5284 20.477 33.1289L28.363 26.4657C28.5739 26.2875 28.8894 26.314 29.0676 26.525C29.2458 26.7359 29.2193 27.0514 29.0084 27.2296L21.6958 33.4082H46.1445C46.4207 33.4082 46.6445 33.6321 46.6445 33.9082C46.6445 34.1844 46.4207 34.4082 46.1445 34.4082H21.7325L29.0084 40.5558C29.2193 40.7341 29.2458 41.0495 29.0676 41.2605C28.8894 41.4714 28.5739 41.4979 28.363 41.3197L20.477 34.6566Z' fill='%23112E3D'/%3E%3C/svg%3E");
+	&::after {
+		content: none !important;
+	}
+	@include breakpoint (small down) {
+		content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34' fill='none'%3E%3Ccircle cx='16.6914' cy='16.6914' r='16.6914' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.2365 17.0734C10.0001 16.8737 10.0001 16.5093 10.2365 16.3095L14.1795 12.978C14.285 12.8889 14.4427 12.9021 14.5318 13.0076C14.621 13.1131 14.6077 13.2708 14.5022 13.3599L10.8459 16.4492H23.0703C23.2084 16.4492 23.3203 16.5612 23.3203 16.6992C23.3203 16.8373 23.2084 16.9492 23.0703 16.9492H10.8643L14.5022 20.023C14.6077 20.1121 14.621 20.2699 14.5318 20.3753C14.4427 20.4808 14.285 20.4941 14.1795 20.405L10.2365 17.0734Z' fill='%23112E3D'/%3E%3C/svg%3E");
+		margin-top: 90px !important;
+        display: none !important;
+
+	}
+}
+
+.swiper-pagination {
+	position: relative !important;
+	margin-top: 32px !important;
+	@include breakpoint (small down) {
+		margin-top: 24px !important;
+	}
+    @include breakpoint (medium up) {
+        display: none !important;
+    }
+}
+
+.swiper-pagination-bullet {
+	margin: 16px !important;
+	height: 16px !important;
+	width: 16px !important;
+    // background: get-color(gray-02);
+	// for some reason gray-02 is not translating as it's true color to the screen without being called as a hex here
+	background: #C4DAE3;
+	@include breakpoint (small down) {
+		margin: 8px !important;
+		height: 8px !important;
+		width: 8px !important;
+	}
+}
+
+.swiper-pagination-bullet-active {
+	background: get-color(green-04) !important;
+}

@@ -47,6 +47,7 @@ function vendorJSTask() {
 	return src(
 		[
 			'node_modules/what-input/dist/what-input.js',
+			'node_modules/swiper/swiper-bundle.min.js',
 			FOUNDATION + '/dist/js/plugins/foundation.core.js',
 			FOUNDATION + '/dist/js/plugins/foundation.util.*.js',
 

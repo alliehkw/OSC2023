@@ -31,5 +31,8 @@
     "watch": "gulp default",
     "browsersync": "gulp bs",
     "update-foundation": "npm install foundation-sites"
+  },
+  "dependencies": {
+    "swiper": "^11.0.3"
   }
 }
