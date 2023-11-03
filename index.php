@@ -18,7 +18,25 @@ get_header(); ?>
 		    <main class="main" role="main">
 		    	<div class="grid-container">
 		    		<div class="grid-x grid-padding-x">
+					<header class="blog-header">
+						<!-- Might need to filter out how this shows up -- could say "archieve: blah blah"  -->
+						<h1 class="page-title">Blog</h1>
+		    		</header>
 		    			<div class="medium-12 cell">
+						<?php 
+							/** Add this where you want the content blocks to show up */
+								$archive_id = get_option( 'page_for_posts', false );
+								if ( false !== $archive_id ) {
+									if ( have_rows( 'content_blocks', $archive_id ) ) :
+										// loop through the rows of data
+										while ( have_rows( 'content_blocks', $archive_id ) ) : the_row();
+
+											get_template_part( 'parts/content-blocks/' . get_row_layout() );
+
+										endwhile;
+									endif;
+								}
+							?>
 						    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						 		<!-- Need to create and call for custom nav like u did for sidenav  -->
 								<!-- To see additional archive styles, visit the /parts directory -->

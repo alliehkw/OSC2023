@@ -45,7 +45,6 @@
 								</div>
 								<nav role="navigation" class="footer-nav">
 									<div class="left-footer">
-										<!-- TO DO : add in contact info into footer under Theme Settings -->
 										<?php $contact_info = get_field('contact_info', 'options'); 
 										echo $contact_info; ?>
 									</div>
@@ -59,7 +58,6 @@
 									</div>
 		    					</nav>
 								<div class="bottom-footer">
-									<!-- TO DO : hook up privacy policy link!!! -->
 									<div class="fine-print">
 										<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Spokane Orthopedic Care | Orthopedic Specialists in Spokane.</p>
 									</div>

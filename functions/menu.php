@@ -7,12 +7,10 @@ register_nav_menus(
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
 		'footer-links'	=> __( 'Footer Links', 'jointswp' ),		// Secondary nav in footer
 		'button-nav' => __( 'Main Buttons Nav', 'jointswp' ),		// Button nav for header
-		'footer-left' => __( 'Footer Left', 'jointswp' ),			// Left footer content
 		'footer-right-1' => __( 'Footer Right 1', 'jointswp' ),		// Right footer content, column 1
 		'footer-right-2' => __( 'Footer Right 2', 'jointswp' ),		// Right footer content, column 2
 		'footer-right-3' => __( 'Footer Right 3', 'jointswp' ),		// Right footer content, column 3
-		'footer-right-4' => __( 'Footer Right 4', 'jointswp' ),		// Right footer content, column 4
-		'footer-bottom' => __( 'Footer Bottom', 'jointswp' )		// Bottom of footer
+		'footer-right-4' => __( 'Footer Right 4', 'jointswp' )		// Right footer content, column 4
 	)
 );
 
@@ -98,18 +96,6 @@ function joints_footer_links() {
 	));
 } /* End Footer Menu */
 
-// The Footer Menu - Left
-function joints_footer_left_links() {
-	wp_nav_menu(array(
-		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-left',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-left',		// Where it's located in the theme
-		'depth'				=> 0,					// Limit the depth of the nav
-		'fallback_cb'		=> ''					// Fallback function
-	));
-} /* End Footer Menu - Left */
-
 // The Footer Menu - Right, Column 1
 function joints_footer_right_1_links() {
 	wp_nav_menu(array(
@@ -157,18 +143,6 @@ function joints_footer_right_4_links() {
 		'fallback_cb'		=> ''					// Fallback function
 	));
 } /* End Footer Menu - Right, Column 4 */
-
-// The Footer Menu - Bottom
-function joints_footer_bottom() {
-	wp_nav_menu(array(
-		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-bottom',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-bottom',		// Where it's located in the theme
-		'depth'				=> 0,					// Limit the depth of the nav
-		'fallback_cb'		=> ''					// Fallback function
-	));
-} /* End Footer Menu - Bottom */
 
 // Header Fallback Menu
 function joints_main_nav_fallback() {
