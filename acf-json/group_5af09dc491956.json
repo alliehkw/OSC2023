@@ -886,7 +886,8 @@
                                             },
                                             "choices": {
                                                 "page": "Page",
-                                                "document": "Document"
+                                                "document": "Document",
+                                                "external_url": "External URL"
                                             },
                                             "default_value": false,
                                             "return_format": "value",
@@ -962,6 +963,32 @@
                                             "mime_types": "",
                                             "insert": "append",
                                             "preview_size": "medium",
+                                            "parent_repeater": "field_652fde5904d12"
+                                        },
+                                        {
+                                            "key": "field_6542d5105aa8c",
+                                            "label": "External URL",
+                                            "name": "external_url",
+                                            "aria-label": "",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_653bf810e36f1",
+                                                        "operator": "==",
+                                                        "value": "external_url"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
                                             "parent_repeater": "field_652fde5904d12"
                                         }
                                     ],
@@ -2149,5 +2176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698851325
+    "modified": 1698880137
 }

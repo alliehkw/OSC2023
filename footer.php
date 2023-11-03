@@ -15,7 +15,6 @@
 								<h2>Subscribe to receive updates from OSC!</h2>
 								<?php the_widget( 'Footer Form' ); ?>
 								<?php echo do_shortcode('[gravityform id="5" title="false" description="false" ajax="true"]'); ?>
-
 							</div>
 						</div>
 					</div>
@@ -46,7 +45,9 @@
 								</div>
 								<nav role="navigation" class="footer-nav">
 									<div class="left-footer">
-										<?php joints_footer_left_links(); ?>
+										<!-- TO DO : add in contact info into footer under Theme Settings -->
+										<?php $contact_info = get_field('contact_info', 'options'); 
+										echo $contact_info; ?>
 									</div>
 									<div class="right-footer">
 										<div class="footer-right-column">
@@ -57,10 +58,15 @@
 										</div>
 									</div>
 		    					</nav>
-								<div class="footer-fineprint">
-									<!-- <p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p> -->
-									<p class="fine-print">© 2023 Spokane Orthopedic Care | Orthopedic Specialists in Spokane.</p>
-									<a class="privacy-policy">Privacy Policy HOOK THIS UP!!</a>
+								<div class="bottom-footer">
+									<!-- TO DO : hook up privacy policy link!!! -->
+									<div class="fine-print">
+										<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Spokane Orthopedic Care | Orthopedic Specialists in Spokane.</p>
+									</div>
+									<div class="privacy-policy">
+										<?php $privacy_policy = get_field('privacy_policy', 'options'); 
+										echo '<a target="_blank" href=' . $privacy_policy['url'] . ')>Privacy Policy</a>' ?>
+									</div>
 								</div>
 							</div>
 						

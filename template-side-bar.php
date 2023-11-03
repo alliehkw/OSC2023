@@ -40,11 +40,11 @@ get_header();
                             // Get the 'Sidebar Nav' select subfield value
                             $selected_sidebar = get_sub_field('sidebar_nav');
                             if ($selected_sidebar && is_active_sidebar($selected_sidebar)) {
-                                echo '<aside class="cell small-12 medium-3 sidebar-nav">';
-                                    echo '<div class="navbox">';
+                                echo '<div class="cell small-12 medium-3 sidebar-nav" data-sticky-container>';
+                                    echo '<div class="sticky navbox" data-sticky data-top-anchor="top-anchor:top" data-btm-anchor="bottom-anchor:bottom" data-options="marginTop:4;">';
                                         get_sidebar($selected_sidebar);
                                     echo '</div>';
-                                echo '</aside>';
+                                echo '</div>';
                             }
                         }
                     endwhile;
@@ -54,9 +54,11 @@ get_header();
                 <!-- Main Child Content Logic -->
                 <?php if (have_posts()) : ?>
                     <main class="main cell small-12 medium-9 child-content" role="main">
-                    <?php while (have_posts()) : the_post(); ?>
-                        <?php get_template_part( 'parts/loop', 'page' ); ?>
-                    <?php endwhile; ?>
+                        <div id="top-anchor"></div>
+                        <?php while (have_posts()) : the_post(); ?>
+                            <?php get_template_part( 'parts/loop', 'page' ); ?>
+                        <?php endwhile; ?>
+                        <div id="bottom-anchor"></div>
                     </main>
                 <?php endif; ?>
             </div> <!-- end .grid-x -->

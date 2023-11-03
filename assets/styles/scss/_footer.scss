@@ -24,25 +24,29 @@ footer.footer {
 				height: 70px;
 			}
 		}
-		div.footer-fineprint {
+		// FOOTER BOTTOM
+		// TO DO : format footer!!! 
+		div.bottom-footer {
+			padding-top: 64px;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			padding-top: 64px;
+			list-style-type: none;
 			@include breakpoint (small down) {
-				flex-direction: column-reverse;
 				gap: 40px;
+				flex-direction: column-reverse;
+				justify-content: left;
 			}
-			p.fine-print {
+			.fine-print p {
 				color: get-color(gray-03);
 				font-size: 16px;
+				text-transform: none;
 			}
-			a.privacy-policy  {
+			.privacy-policy a {
 				text-decoration: underline;
-				// color: white;
-				// TO DO : hook up this link then change color back
-				color: red;
+				text-transform: none;
+				color: white;
 				font-size: 16px;			
 			}
 		}
@@ -50,24 +54,26 @@ footer.footer {
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
+			margin-top: 24px;
 			.menu .active>a, .menu a, .menu li, .menu>li.is-active>a {
 				color: white;
 			}
-			div.left-footer ul#footer-left {
+			div.left-footer p {
 				display: flex;
 				flex-direction: column;
 				gap: 16px;
-				margin-top: 24px;
-				a:hover {
-					font-weight: normal;
-					cursor: text;
-				}
-				li {
-					text-transform: none;
+				font-size: 16px;
+				a {
+					color: white;
+					text-decoration: none;
+					font-size: 16px;
+					&:hover {
+						font-weight: bold;
+						color: white;
+					}
 				}
 			}
 			div.right-footer {
-				margin-top: 24px;
 				@include breakpoint (medium down) {
 					margin-top: 64px;
 				}

@@ -1,7 +1,7 @@
-.off-canvas-wrapper  {
-	height: 100vh;
-	overflow-y: auto;
-}
+// .off-canvas-wrapper  {
+// 	height: 100vh;
+// 	overflow-y: auto;
+// }
 
 // SCROLL BAR
 // -----------
@@ -457,12 +457,13 @@ div::-webkit-scrollbar {
 			// input custom text
 			.gform_drop_instructions {
 				color: get-color(gray-04);
+				content: "test test test" !important;
 			}
 			.gform_drop_instructions::after {
 				content: "choose files to upload";
 			}
 		}
-	// TO DO : add in drop down carrot
+
 	.ginput_container_select {
 		display: grid;
 		grid-template-areas: 'select';
@@ -634,3 +635,4 @@ img.board-cert {
 		}
 	}
 }		
+  

@@ -2,6 +2,15 @@
     background-color: white;
 }
 
+.sticky-container {
+    max-width: 100%;
+    background-color: white;
+}
+
+.top-bar .menu {
+    align-items: center;
+}
+
 li.menu-item {
     font-size: 14px;
     font-style: normal;
@@ -31,6 +40,17 @@ li.menu-item {
 
 .dropdown.menu>li>a {
     padding: 0;
+    padding-top: 4px;
+}
+
+.is-dropdown-submenu {
+    border: 0;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.is-dropdown-submenu-parent {
+    padding-top: 4px;
 }
 
 .dropdown.menu>li.is-dropdown-submenu-parent>a, 
@@ -46,6 +66,12 @@ li.menu-item {
     border-radius: 5px;
 }
 
+li.nav-button + li.nav-button {
+    @include breakpoint (large up) {
+        margin-left: 16px;
+    }
+}
+
 .menu li.nav-button {
     padding: 0;
     font-size: 15px;
@@ -58,8 +84,12 @@ li.menu-item {
     a {
         padding: 10px 16px;
 		padding-top: 14px;
-        border-radius: 0.125em;
+        @include breakpoint (medium down) {
+            padding: 20px;
+        }
+        border-radius: 2px;
         border: solid 0.0625em;
+        margin: 0;
     }
      // TO DO : change nav colors based on page location and scroll position
     &.low-contrast a {
@@ -77,35 +107,19 @@ li.menu-item {
 
 .top-bar {
     background-color: white;
-    padding: 0 60px;
-    height: 72px;
-    @include breakpoint(small down) {
-        padding: 0;
-    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
     ul {
         background-color: white;
     }
-    .show-for-small-only {
-        display: flex;
-        justify-content: flex-end;
-        padding: 24px 20px;
-    }
 }
 
-.top-bar-right ul#main-nav {
-    gap: 16px;
-    align-items: center;
+li.logo, li.logo a img {
+    padding: 0;
 }
 
-.top-bar-left, .top-bar-right {
-    display: flex;
-    align-items: center;
-}
-
-li.logo a img {
-    margin-right: 16px;
-}
-// TO DO : fix hambergur nav
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
 .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
@@ -114,7 +128,6 @@ li.logo a img {
     display: flex;
     align-items: center;
     margin-top: 3px;
-    right: -4px;
     // white
     // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     // black
@@ -131,8 +144,18 @@ li.logo a img {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.accordion-menu .is-accordion-submenu a, .accordion-menu a {
-    padding: 20px ;
+.accordion-menu {
+    a { 
+        padding: 20px ;
+    }
+    .is-accordion-submenu-parent {
+        li.is-accordion-submenu-item a{
+            padding: 10px;
+            padding-left: 50px;
+            text-transform: none;
+            text-transform: capitalize;
+        }
+    }
 }
 
 .close-button, .close-button.medium {
@@ -144,6 +167,39 @@ li.logo a img {
     background: get-color(gray-02); 
     box-shadow: 0 7px 0 get-color(gray-02), 0 14px 0 get-color(gray-02);
 }
+
+.top-bar-right {
+	display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    @include breakpoint (medium down) {
+        flex: 0 0 0 !important;
+        width: auto !important;
+    }
+    @include breakpoint(medium down) {
+        display: none;
+    }
+    &.float-right {
+        display: none;
+        @include breakpoint(medium down) {
+            display: block;
+        };
+    }
+}
+
+.top-bar-left {
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    ul {
+        width: fit-content;
+    }
+    @include breakpoint (medium down) {
+        max-width: 50% !important;
+    }
+}
+
 
 .sidebar-nav {
     margin-bottom: 24px;
@@ -177,9 +233,41 @@ li.logo a img {
             }
         }
     }
-    
 }
 
-// TO DO : why does the text appear behind the sidenav text (see our research and company drop down for example)
-// why does the nav bar refresh all jumpy
-// why isnt the sticky nav or the hambergur working? 
+.main-content-with-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.off-canvas.position-top.is-transition-push.is-open {
+    padding-top: 40px;
+    a {
+        @include breakpoint (large up) {
+            padding: 20px;
+        }
+        color: get-color(body-text);
+        background-color: white;
+        border: none;
+    }
+}
+
+.position-top.is-transition-push {
+    box-shadow: none;
+}
+
+// Tablet menu formatting 
+ul#main-nav {
+    @include breakpoint (medium down) {
+    display: flex;
+    flex-direction: column;
+    li {
+        padding: 0;
+    }
+    }
+}
+// // TO DO : 
+// // why does the nav bar refresh all jumpy
+// // should the drop downs left align with their parent? i think they right align rn
+// // fix formatting for mobile and especially tablet
+

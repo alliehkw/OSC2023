@@ -1,3 +1,5 @@
+<!-- READ MORE SECTION POPULATION  -->
+
 <?php
 // Related Posts Function, matches posts by tags - call using joints_related_posts(); )
 function joints_related_posts() {

@@ -1,3 +1,8 @@
+<!-- SINGLE BLOG POST  -->
+<!-- ADD BREADCRUMB ?? ASK STEVE  -->
+<!-- ADD READ MORE GENEVA HAS SNIPPER  -->
+<!-- add grid container and add READ MORE section  -->
+
 <?php 
 /**
  * The template for displaying all single posts and attachments

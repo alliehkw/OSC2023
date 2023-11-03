@@ -80,12 +80,14 @@ if (get_sub_field('custom_padding')) {
                                     if ($linkType == 'document') :
                                         $link = get_sub_field('document')[0];
                                         $target = '_blank';
-                                    endif;
-                                    if($linkType == 'page') :
+                                    elseif($linkType == 'page') :
                                         $link = get_sub_field('page_link');
+                                    elseif($linkType =='external_url') :
+                                        $link = get_sub_field('external_url');
+                                        $target = '_blank';
                                     endif;
                                     echo '<a target="' . $target . '" href="' . esc_url($link) . '" class="cell small-12 medium-shrink button ' . esc_attr($buttonColor) . ' " role="button">';
-                                        echo esc_html($buttonText);
+                                        echo $buttonText;
                                     echo '</a>';
                                 endwhile;
                             endif;
