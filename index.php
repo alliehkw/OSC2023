@@ -38,22 +38,22 @@ get_header(); ?>
 									}
 								?>
 								<div class="article-loop">
-								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-									<!-- Need to create and call for custom nav like u did for sidenav  -->
-									<!-- To see additional archive styles, visit the /parts directory -->
-									<!-- This is where you style the blog cards  -->
-									<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
-									
-								<?php endwhile; ?>	
-									<!-- This is pagination  -->
-									<?php joints_page_navi(); ?>
-									
-								<?php else : ?>
-															
-									<?php get_template_part( 'parts/content', 'missing' ); ?>
+									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+										<!-- Need to create and call for custom nav like u did for sidenav  -->
+										<!-- To see additional archive styles, visit the /parts directory -->
+										<!-- This is where you style the blog cards  -->
+										<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 										
-								<?php endif; ?>
-							</div>
+									<?php endwhile; ?>	
+										<!-- This is pagination  -->
+										<?php joints_page_navi(); ?>
+										
+									<?php else : ?>
+																
+										<?php get_template_part( 'parts/content', 'missing' ); ?>
+											
+									<?php endif; ?>
+								</div>
 						</div>
 					</div>
 				</div>														

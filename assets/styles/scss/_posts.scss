@@ -28,7 +28,6 @@
     }
 }
 
-
 .blog-header {
     max-width: 75rem;
     width: 100%;
@@ -157,11 +156,6 @@
     flex-direction: column;
     gap: 16px;
     margin-bottom: 16px;
-    p {
-        color: get-color(gray-04);
-        text-transform: uppercase;
-        font-size: 14px;
-    }
     .title-box {
         overflow: hidden;	
         display: -webkit-box;
@@ -175,7 +169,13 @@
     }
 }
 
-.entry-content {
+p.byline {
+    color: get-color(gray-04);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.article-container .entry-content {
     display: flex;
     flex-direction: column;
     p {
@@ -186,7 +186,7 @@
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;  
     }
-    a {
+    a.excerpt-read-more {
         text-decoration: none;
         text-transform: uppercase;
         color: get-color(green-04);
@@ -240,4 +240,54 @@ ul.pagination {
         justify-content: center;
         align-items: center;
     }
+}
+
+.single-article {
+    display: flex;
+    justify-content: space-between;
+    margin: 64px 0;
+    @include breakpoint (medium down) {
+        margin: 36px 0;
+    }
+    h5.read-more {
+        color: get-color(gray-06);
+        font-weight: bold;
+    }
+    ul.joints-related-posts {
+        margin: 0 !important;
+    }
+    div.related-post {
+        margin-top: 24px;
+        display: flex;
+        gap: 24px;
+        .related-post-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .related-post-image {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            .image-container {
+                display: flex;
+                height: 100px;
+                width: 120px;
+                overflow: hidden;
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                    max-width: 150%;
+                    object-fit: cover;
+                }
+            }
+        }
+        h6.related-post-link a {
+            text-decoration: none;
+            font-weight: bold;
+            color: get-color(gray-06);
+        }
+    }
+    
+ 
 }
