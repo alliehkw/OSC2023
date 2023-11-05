@@ -23,35 +23,37 @@ get_header(); ?>
 						<h1 class="page-title">Blog</h1>
 		    		</header>
 		    			<div class="medium-12 cell">
-						<?php 
-							/** Add this where you want the content blocks to show up */
-								$archive_id = get_option( 'page_for_posts', false );
-								if ( false !== $archive_id ) {
-									if ( have_rows( 'content_blocks', $archive_id ) ) :
-										// loop through the rows of data
-										while ( have_rows( 'content_blocks', $archive_id ) ) : the_row();
+							<?php 
+								/** Add this where you want the content blocks to show up */
+									$archive_id = get_option( 'page_for_posts', false );
+									if ( false !== $archive_id ) {
+										if ( have_rows( 'content_blocks', $archive_id ) ) :
+											// loop through the rows of data
+											while ( have_rows( 'content_blocks', $archive_id ) ) : the_row();
 
-											get_template_part( 'parts/content-blocks/' . get_row_layout() );
+												get_template_part( 'parts/content-blocks/' . get_row_layout() );
 
-										endwhile;
-									endif;
-								}
-							?>
-						    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						 		<!-- Need to create and call for custom nav like u did for sidenav  -->
-								<!-- To see additional archive styles, visit the /parts directory -->
-								<!-- This is where you style the blog cards  -->
-								<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
-							    
-							<?php endwhile; ?>	
-								<!-- This is pagination  -->
-								<?php joints_page_navi(); ?>
-								
-							<?php else : ?>
-														
-								<?php get_template_part( 'parts/content', 'missing' ); ?>
+											endwhile;
+										endif;
+									}
+								?>
+								<div class="article-loop">
+								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+									<!-- Need to create and call for custom nav like u did for sidenav  -->
+									<!-- To see additional archive styles, visit the /parts directory -->
+									<!-- This is where you style the blog cards  -->
+									<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 									
-							<?php endif; ?>
+								<?php endwhile; ?>	
+									<!-- This is pagination  -->
+									<?php joints_page_navi(); ?>
+									
+								<?php else : ?>
+															
+									<?php get_template_part( 'parts/content', 'missing' ); ?>
+										
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
 				</div>														
