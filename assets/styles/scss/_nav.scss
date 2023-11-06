@@ -1,10 +1,6 @@
-.off-canvas {
-    background-color: white;
-}
-
 .sticky-container {
     max-width: 100%;
-    background-color: white;
+    background-color: transparent;
 }
 
 .top-bar .menu {
@@ -20,13 +16,13 @@ li.menu-item {
     text-transform: uppercase;
 }
 
-.menu li, .menu a, .menu>li.is-active>a, .menu .active>a {
-    color: get-color(gray-06);
+.menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
+    color: white;
     background-color: transparent;
     font-size: 14px; 
     text-decoration: none;
     &:hover {
-        color: get-color(gray-06);
+        color: white;
         background-color: transparent;
         font-weight: bold;
         text-decoration: none;
@@ -95,25 +91,36 @@ li.nav-button + li.nav-button {
      // TO DO : change nav colors based on page location and scroll position
     &.low-contrast a {
         // TO DO : i made the color red for now as a place holder but it needs to be changed in the final 
-        // color: white;
-        color: red;
-        border: transparent;
+        color: white;
+        border: 1px solid white;
         background-color: transparent;
+
     }
     &.high-contrast a {
-        color: white;
-        background-color: get-color(green-04);
+        color: get-color(green-04);
+        background-color: white;
+        border: 1px solid white;
     }
 } 
 
+// SPECIAL FORMATTING FOR HOME PAGE NAV BAR
+div.homepage-class.sticky-container {
+    .menu li.nav-button.high-contrast a {
+        color: white;
+        background-color: get-color(green-04);
+        border: 1px solid get-color(green-04);
+    }
+}
+
 .top-bar {
-    background-color: white;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     width: 100%;
     margin: auto;
+    padding: 0 !important;
     ul {
-        background-color: white;
+        background-color: transparent;
     }
 }
 
@@ -130,9 +137,9 @@ li.logo, li.logo a img {
     align-items: center;
     margin-top: 3px;
     // white
-    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     // black
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
@@ -140,9 +147,9 @@ li.logo, li.logo a img {
 .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
     transform: none;
     // white 
-    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     // black
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .close-button, .close-button.medium {
