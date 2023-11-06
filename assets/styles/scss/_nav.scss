@@ -227,9 +227,9 @@ li.logo, li.logo a img {
     flex-direction: column;
 }
 
+// Tablet and mobile top nav menu formatting 
 .accordion-menu {
-    // I had to use !important to over write a lot of base formatting
-    // for the nav bar
+    // I had to use !important to over write a lot of base formatting for the nav bar
     li.nav-button {
         margin-left: 16px !important;
         margin-right: 16px !important;
@@ -239,6 +239,9 @@ li.logo, li.logo a img {
         margin-left: 16px;
         margin-right: 16px;
         width: 90%;
+        @include breakpoint (medium up) {
+            width: 100%;
+        }
         a {
             color: get-color(gray-06) !important;
             font-size: 14px;
@@ -270,17 +273,6 @@ li.logo, li.logo a img {
 .position-top.is-transition-push {
     box-shadow: none;
     padding-top: 24px;
-}
-
-// Tablet menu formatting 
-ul#main-nav {
-    @include breakpoint (medium down) {
-    display: flex;
-    flex-direction: column;
-    li {
-        padding: 0;
-    }
-    }
 }
 // // TO DO : 
 // // why does the nav bar refresh all jumpy
