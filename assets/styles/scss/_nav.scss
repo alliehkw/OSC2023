@@ -1,3 +1,9 @@
+.off-canvas {
+    @include breakpoint (medium down) {
+        background-color: white;
+    }
+}
+
 .sticky-container {
     max-width: 100%;
     background-color: transparent;
@@ -31,7 +37,7 @@ li.menu-item {
 
 .menu li, .menu a  {
     padding: 0;
-    margin-right: 16px;
+    margin-right: 24px;
 }
 
 .dropdown.menu>li>a {
@@ -43,7 +49,6 @@ li.menu-item {
     border: 0;
     border-radius: 4px;
     margin-top: 15px;
-    z-index: 3000; 
 }
 
 .is-dropdown-submenu-parent {
@@ -53,7 +58,6 @@ li.menu-item {
 .dropdown.menu>li.is-dropdown-submenu-parent>a, 
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a  {
     padding-right: 8px;
-    margin-right: 24px;
 }
 
 .dropdown.menu.medium-horizontal>li.opens-right>.is-dropdown-submenu {
@@ -103,15 +107,6 @@ li.nav-button + li.nav-button {
     }
 } 
 
-// SPECIAL FORMATTING FOR HOME PAGE NAV BAR
-div.homepage-class.sticky-container {
-    .menu li.nav-button.high-contrast a {
-        color: white;
-        background-color: get-color(green-04);
-        border: 1px solid get-color(green-04);
-    }
-}
-
 .top-bar {
     background-color: transparent;
     display: flex;
@@ -126,6 +121,15 @@ div.homepage-class.sticky-container {
 
 li.logo, li.logo a img {
     padding: 0;
+    margin: 0;
+}
+
+li.logo {
+    @include breakpoint (medium down) {
+        padding: 0px 32px;
+    }
+    margin: 0;
+    margin-right: 16px;
 }
 
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
@@ -140,6 +144,10 @@ li.logo, li.logo a img {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     // black
     // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    @include breakpoint (medium down) {
+        // black
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
 }
 
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
@@ -150,6 +158,10 @@ li.logo, li.logo a img {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     // black
     // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    @include breakpoint (medium down) {
+        // black
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
 }
 
 .close-button, .close-button.medium {
@@ -245,10 +257,7 @@ li.logo, li.logo a img {
         border-bottom: 1px solid get-color(gray-02);
         margin-left: 16px;
         margin-right: 16px;
-        width: 90%;
-        @include breakpoint (medium up) {
-            width: 100%;
-        }
+        width: 100%;
         a {
             color: get-color(gray-06) !important;
             font-size: 14px;
@@ -286,3 +295,118 @@ li.logo, li.logo a img {
 // // should the drop downs left align with their parent? i think they right align rn
 // // fix formatting for mobile and especially tablet
 
+// SPECIAL FORMATTING NAV BAR --> TOP/UNSCROLLED
+div.sticky-container, div.stickycontainer.unscrolled {
+    .header-container {
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .menu li.nav-button.high-contrast a {
+        color: get-color(green-04);
+        background-color: white;
+        border: 1px solid white;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+    .menu li.nav-button.low-contrast a {
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+    .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
+    .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
+        border-style: none;
+        width: 0;
+        display: flex;
+        align-items: center;
+        margin-top: 3px;
+        // white
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        // black
+        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
+    .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
+        transform: none;
+        // white 
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        // black
+        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
+        color: white;
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: white;        
+            transition: color 0.3s ease-in-out;
+        }
+    }
+    .is-dropdown-submenu {
+        background-color: transparent;
+    }
+}
+
+// SPECIAL FORMATTING FOR NAV BAR --> SCROLLED
+div.sticky-container.scrolled {
+    .header-container {
+        background-color: white;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .menu li.nav-button.high-contrast a {
+        color: white;
+        background-color: get-color(green-04);
+        border: 1px solid get-color(green-04);
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+    .menu li.nav-button.low-contrast a {
+        color: get-color(gray-06);
+        background-color: white;
+        border: 1px solid get-color(gray-06);
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+    .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
+    .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
+        border-style: none;
+        width: 0;
+        display: flex;
+        align-items: center;
+        margin-top: 3px;
+        // white
+        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        // black
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
+    .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
+        transform: none;
+        // white 
+        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        // black
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
+        color: get-color(gray-06);
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: get-color(gray-06);
+            transition: color 0.3s ease-in-out;
+        }
+    }
+    .is-dropdown-submenu {
+        background-color: white;
+    }
+}
+
+// SPECIAL FORMATTING HOME PAGE NAV BAR --> TOP/UNSCROLLED
+div.homepage-class.sticky-container, div.homepage-class.stickycontainer.unscrolled {
+    .menu li.nav-button.high-contrast a {
+        color: white;
+        background-color: get-color(green-04);
+        border: 1px solid get-color(green-04);
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+}
