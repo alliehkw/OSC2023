@@ -32,11 +32,11 @@
     max-width: 75rem;
     width: 100%;
     margin: auto;
-    margin-top: 64px;
+    margin-top: 80px;
     padding-left: 1.875rem;
     padding-right: 1.875rem;
     @include breakpoint (medium down) {
-        margin-top: 36px;
+        margin-top: 64px;
     }
     display: flex;
     justify-content: left;
