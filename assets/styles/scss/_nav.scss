@@ -207,39 +207,7 @@ li.logo {
 }
 
 
-.sidebar-nav {
-    margin-bottom: 24px;
-    .menu {
-        display: flex;
-        padding: 32px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-        border: 1px solid get-color(gray-02);
-        font-weight: 450;
-        a {
-            padding: 0;
-        }
-        .active a {
-            color: get-color(osc-brand-color);
-        }
-        .sub-menu {
-            li a {
-                margin: 0;
-                padding: 10px;
-                padding-bottom: 0;
-                text-transform: none;
-                display: list-item;
-                list-style-type: disc;
-                list-style-position: inside;
-                color: get-color(gray-06);
-            }
-            li.active a {
-                color: get-color(osc-brand-color);
-            }
-        }
-    }
-}
+
 
 .main-content-with-sidebar {
     display: flex;
@@ -525,5 +493,46 @@ div.blogpage-class.sticky-container.scrolled {
     }
     .is-dropdown-submenu {
         background-color: white;
+    }
+}
+
+// SIDEBAR NAV
+.sidebar-nav {
+    .sidebar .widget_nav_menu {
+    margin-bottom: 24px;
+    .menu {
+        li.menu-item {
+            margin: 0;
+        }
+        display: flex;
+        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        border: 1px solid get-color(gray-02);
+        font-weight: 450;
+        a {
+            padding: 0;
+            color: get-color(gray-06);
+        }
+        .active a {
+            color: get-color(osc-brand-color);
+        }
+        .sub-menu {
+            li a {
+                margin: 0;
+                padding: 10px 0 0 10px;
+                padding-bottom: 0;
+                text-transform: none;
+                display: list-item;
+                list-style-type: disc;
+                list-style-position: inside;
+                color: get-color(gray-06);
+            }
+            li.active a {
+                color: get-color(osc-brand-color);
+            }
+        }
+    }
     }
 }
