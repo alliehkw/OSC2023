@@ -18,6 +18,9 @@
 							<?php if ( is_home() ): ?>
 								<!-- If is_home() is true, use a different image -->
 								<img class="image-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo-colored-1.svg" alt="Logo"/>
+							<?php elseif ( is_category() ): ?>
+								<!-- If is_category() is true, use a different image -->
+								<img class="image-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo-colored-1.svg" alt="Logo"/>
 							<?php else: ?>
 								<!-- If is_home() is false, use the default image -->
 								<img class="image-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo-colored-2.svg" alt="Logo"/>
