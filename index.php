@@ -7,7 +7,6 @@
  * It is used to display a page when nothing more specific matches a query.
  */
 // THIS SHOWS ALL BLOG POSTS 
-// ADD FEATURED BLOG POST 
 // ADD BLOG MENU HERE 
 get_header(); ?>
 			
@@ -19,7 +18,7 @@ get_header(); ?>
 		    	<div class="grid-container">
 		    		<div class="grid-x grid-padding-x">
 					<header class="blog-header">
-						<!-- Might need to filter out how this shows up -- could say "archieve: blah blah"  -->
+						
 						<h1 class="page-title">Blog</h1>
 		    		</header>
 		    			<div class="medium-12 cell">
@@ -37,6 +36,15 @@ get_header(); ?>
 										endif;
 									}
 								?>
+							<!-- Blog categories nav  -->
+							<div class="blog-categories-container">
+							<?php
+								echo '<p class="category">Category:</p>';
+								echo '<div class="blog-categories">';
+									wp_nav_menu( array( 'theme_location' => 'blog-categories' ) );
+								echo '</div>';
+							?>
+							</div>
 								<div class="article-loop">
 									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 										<!-- Need to create and call for custom nav like u did for sidenav  -->
@@ -45,15 +53,15 @@ get_header(); ?>
 										<?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
 										
 									<?php endwhile; ?>	
-										<!-- This is pagination  -->
-										<?php joints_page_navi(); ?>
-										
 									<?php else : ?>
 																
 										<?php get_template_part( 'parts/content', 'missing' ); ?>
 											
 									<?php endif; ?>
+									
 								</div>
+								<!-- This is pagination  -->
+								<?php joints_page_navi(); ?>
 						</div>
 					</div>
 				</div>														

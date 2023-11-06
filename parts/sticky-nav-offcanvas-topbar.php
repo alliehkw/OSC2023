@@ -19,8 +19,6 @@
 				<?php joints_button_nav(); ?>	
 			</div>
 			<div class="top-bar-right float-right">
-			<!-- TO DO : make sure hamberger happens on both tablet and mobile. currently its only on tablet  -->
-			<!-- i need to adjust something with "show-for-medium" and "show-for-small-only" i think  -->
 				<ul class="menu">
 					<li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li>
 				</ul>

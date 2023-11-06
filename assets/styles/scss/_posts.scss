@@ -6,13 +6,13 @@
     flex-wrap: wrap;
     max-width: 75rem;
     gap: 80px 24px;
-    margin-left: 0.9375rem;
-    margin-right: 0.9375rem;
     margin-top: 80px;
+    margin-bottom: 48px;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
     @include breakpoint (small down) {
-        margin-left: 0.625rem;
-        margin-right: 0.625rem;
         margin-top: 56px;
+        margin-bottom: 24px;
     }
 }
 
@@ -33,17 +33,22 @@
     width: 100%;
     margin: auto;
     margin-top: 64px;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
     @include breakpoint (medium down) {
         margin-top: 36px;
     }
     display: flex;
     justify-content: left;
-    padding-left: 1.875rem;
-    padding-right: 1.875rem;
+    @include breakpoint (small down) {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+    }
     .page-title {
         text-align: left;
         color: get-color(gray-06);
         font-size: 48px;
+        text-transform: capitalize;
         @include breakpoint (medium down) {
             font-size: 36px;
         }
@@ -57,9 +62,9 @@
     max-width: 75rem;
     width: 100%;
     padding: 0;
-    padding-top: 64px;
-    @include breakpoint (medium down) {
-        padding-top: 48px;
+    padding-top: 40px;
+    @include breakpoint (small down) {
+        padding-top: 24px;
     }
     .post-card {
         display: flex;
@@ -174,7 +179,15 @@ p.byline {
     text-transform: uppercase;
     font-size: 14px;
 }
-
+a.read-more, a.excerpt-read-more {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: get-color(green-04);
+    font-size: 15px;
+    font-weight: 450;
+    line-height: 16px;
+    letter-spacing: 0.75px;
+}
 .article-container .entry-content {
     display: flex;
     flex-direction: column;
@@ -186,27 +199,18 @@ p.byline {
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;  
     }
-    a.excerpt-read-more {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: get-color(green-04);
-        font-size: 15px;
-        font-weight: 450;
-        line-height: 16px;
-        letter-spacing: 0.75px;
-    }
     gap: 16px;
-}
-
-.page-navigation {
-    margin-top: 80px;
-    @include breakpoint (small down) {
-        margin-top: 56px;
-    }
 }
 
 ul.pagination {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 80px;
+    @include breakpoint (small down) {
+        justify-content: center;
+        margin-bottom: 56px;
+    }
     span.current {
         background-color: get-color(green-04);
         font-weight: bold;
@@ -288,6 +292,48 @@ ul.pagination {
             color: get-color(gray-06);
         }
     }
-    
- 
+}
+
+// BLOG CATEGORIES NAV
+div.blog-categories-container {
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+    max-width: 75rem;
+    margin-top: 80px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid get-color(gray-03);
+    @include breakpoint (small down) {
+        margin-top: 56px;
+        padding-bottom: 16px;
+    }
+    p.category {
+        color: get-color(gray-06);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; 
+        margin-bottom: 16px;
+    }
+    ul#menu-blog-categories {
+        display: flex;
+        gap: 24px 24px;
+        a {
+            font-size: 15px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 16px;
+            letter-spacing: 0.75px;
+            text-transform: uppercase;
+            color: get-color(gray-03);
+        }
+        a:hover {
+            color: get-color(gray-04);
+        }
+        a:focus {
+            color: get-color(gray-06);
+        }
+        .current-menu-item a {
+            color: get-color(gray-06);
+        }
+    }
 }

@@ -45,7 +45,7 @@ echo '<div class="content-block featured-posts">';
                                 echo '<p class="featured-post">Featured Post</p>';
                                 echo '<h3>' . $fp_title . '</h3>';
                                 echo '<p class="excerpt">' . $fp_excerpt . '</p>';
-                                echo '<a class="read-more" href="' . $link . '" title="' . $fp_title . '">Read More</a>';
+                                echo '<a class="read-more" href="' . $link . '" title="' . $fp_title . '">'. __('Read more &raquo;', 'jointswp') .'</a>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';

@@ -10,7 +10,9 @@ register_nav_menus(
 		'footer-right-1' => __( 'Footer Right 1', 'jointswp' ),		// Right footer content, column 1
 		'footer-right-2' => __( 'Footer Right 2', 'jointswp' ),		// Right footer content, column 2
 		'footer-right-3' => __( 'Footer Right 3', 'jointswp' ),		// Right footer content, column 3
-		'footer-right-4' => __( 'Footer Right 4', 'jointswp' )		// Right footer content, column 4
+		'footer-right-4' => __( 'Footer Right 4', 'jointswp' ),		// Right footer content, column 4
+		'blog-categories' => __( 'Blog Categories', 'jointswp' )	// Blog categories
+
 	)
 );
 
@@ -144,6 +146,18 @@ function joints_footer_right_4_links() {
 	));
 } /* End Footer Menu - Right, Column 4 */
 
+// Blog Categories
+function joints_blog_categories() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'blog_categories',	// Adding custom nav id
+		'menu_class'		=> 'menu',				// Adding custom nav class
+		'theme_location'	=> 'blog_categories',	// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Blog Categories
+
 // Header Fallback Menu
 function joints_main_nav_fallback() {
 	wp_page_menu( array(
@@ -160,7 +174,7 @@ function joints_main_nav_fallback() {
 // Footer Fallback Menu
 function joints_footer_links_fallback() {
 	/* You can put a default here if you like */
-}
+// }
 
 // Add Foundation active class to menu
 function required_active_nav_class( $classes, $item ) {

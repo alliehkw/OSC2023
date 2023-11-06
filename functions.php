@@ -52,3 +52,5 @@ require_once(get_template_directory().'/functions/login.php');
 // Customize the WordPress admin
 require_once(get_template_directory().'/functions/admin.php'); 
 
+// Get rid of the "Archive: " in front of the title name
+require_once(get_template_directory().'/functions/get-the-archive-title.php'); 
