@@ -17,5 +17,4 @@
 	<?php if ( is_active_sidebar( 'offcanvas' ) ) : ?>
 		<?php dynamic_sidebar( 'offcanvas' ); ?>
 	<?php endif; ?>
-
 </div>

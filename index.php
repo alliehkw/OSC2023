@@ -7,7 +7,6 @@
  * It is used to display a page when nothing more specific matches a query.
  */
 // THIS SHOWS ALL BLOG POSTS 
-// ADD BLOG MENU HERE 
 get_header(); ?>
 			
 	<div class="content">

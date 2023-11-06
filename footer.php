@@ -63,7 +63,7 @@
 									</div>
 									<div class="privacy-policy">
 										<?php $privacy_policy = get_field('privacy_policy', 'options'); 
-										echo '<a target="_blank" href=' . $privacy_policy['url'] . ')>Privacy Policy</a>' ?>
+										echo '<a target="_blank" href=' . $privacy_policy['url'] . '">Privacy Policy</a>' ?>
 									</div>
 								</div>
 							</div>
@@ -73,6 +73,8 @@
 				</footer> <!-- end .footer -->
 			
 			</div>  <!-- end .off-canvas-content -->
+			<!-- Load off-canvas container. Feel free to remove if not using. -->			
+			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 					
 		</div> <!-- end .off-canvas-wrapper -->
 		

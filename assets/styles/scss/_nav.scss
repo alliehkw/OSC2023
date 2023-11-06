@@ -145,20 +145,6 @@ li.logo, li.logo a img {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.accordion-menu {
-    a { 
-        padding: 20px ;
-    }
-    .is-accordion-submenu-parent {
-        li.is-accordion-submenu-item a{
-            padding: 10px;
-            padding-left: 50px;
-            text-transform: none;
-            text-transform: capitalize;
-        }
-    }
-}
-
 .close-button, .close-button.medium {
     right: 11px;
     color: get-color(gray-06);
@@ -241,20 +227,49 @@ li.logo, li.logo a img {
     flex-direction: column;
 }
 
-.off-canvas.position-top.is-transition-push.is-open {
-    padding-top: 40px;
-    a {
-        @include breakpoint (large up) {
-            padding: 20px;
-        }
-        color: get-color(body-text);
+.accordion-menu {
+    // I had to use !important to over write a lot of base formatting
+    // for the nav bar
+    li.nav-button {
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+    }
+    .is-accordion-submenu-parent, .nav-button, li {
+        border-bottom: 1px solid get-color(gray-02);
+        margin-left: 16px;
+        margin-right: 16px;
+        width: 90%;
+        a {
+            color: get-color(gray-06) !important;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            padding: 24px 4px !important;
+            margin-right: 0;
+            border: none !important;
+            background-color: white !important;
+        }   
+    }
+    li.is-accordion-submenu-item {
+        border-bottom: none;
+        margin: 0 !important;
+        a {
+        padding: 24px 4px;
+        text-transform: none;
         background-color: white;
-        border: none;
+        text-transform: capitalize;
+        color: get-color(gray-06);
+        font-size: 16px;
+        font-weight: normal;
+        border-bottom: none;
+        }
     }
 }
 
 .position-top.is-transition-push {
     box-shadow: none;
+    padding-top: 24px;
 }
 
 // Tablet menu formatting 
