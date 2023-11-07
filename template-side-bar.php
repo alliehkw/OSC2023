@@ -40,19 +40,7 @@ get_header();
                             // Get the 'Sidebar Nav' select subfield value
                             $selected_sidebar = get_sub_field('sidebar_nav');
                             if ($selected_sidebar && is_active_sidebar($selected_sidebar)) {
-                                // The 'desktop' version
-                                echo '<div class="cell medium-12 large-3 sidebar-nav desktop" data-sticky-container>';
-                                    echo '<div class="sticky navbox" data-sticky data-top-anchor="top-anchor:top" data-btm-anchor="bottom-anchor:bottom" data-options="marginTop:4;">';
-                                        get_sidebar($selected_sidebar);
-                                    echo '</div>';
-                                echo '</div>';
-                                // TO DO : it can't call the sidebar twice so it won't display the sidebar for tablet how do I fix this?
-                                // The 'tablet' version
-                                echo '<div class="cell medium-12 large-3 sidebar-nav tablet" data-sticky-container>';
-                                    echo '<div class="sticky navbox" data-options="marginTop:4;">';                                        
-                                        get_sidebar($selected_sidebar);
-                                    echo '</div>';
-                                echo '</div>';
+                                get_sidebar($selected_sidebar);
                             }
                         }
                     endwhile;
@@ -61,7 +49,7 @@ get_header();
 
                 <!-- Main Child Content Logic -->
                 <?php if (have_posts()) : ?>
-                    <main class="main cell small-12 medium-9 child-content" role="main">
+                    <main class="main cell medium-12 large-9 child-content" role="main">
                         <div id="top-anchor"></div>
                         <?php while (have_posts()) : the_post(); ?>
                             <?php get_template_part( 'parts/loop', 'page' ); ?>

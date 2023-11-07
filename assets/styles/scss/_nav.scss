@@ -497,57 +497,57 @@ div.blogpage-class.sticky-container.scrolled {
 }
 
 // SIDEBAR NAV
-.sidebar-nav {
-    &.tablet {
-        display: none; // Hide by default
-        @include breakpoint(medium down) {
-            display: block; // Show on medium and smaller devices
-        }
-    }
-    &.desktop {
-        display: none; // Hide by default
-        @include breakpoint(large up) {
-            display: block; // Show on large and bigger devices
-        }
-    }
+.sidebar-nav.desktop.sticky-container, .sidebar-nav.tablet {
     @include breakpoint (medium down) {
         margin-bottom: 48px;
     }
-    .sidebar .widget_nav_menu {
-    margin-bottom: 24px;
-    .menu {
-        li.menu-item {
-            margin: 0;
-        }
-        display: flex;
-        padding: 32px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-        border: 1px solid get-color(gray-02);
-        font-weight: 450;
-        a {
-            padding: 0;
-            color: get-color(gray-06);
-        }
-        .active a {
-            color: get-color(osc-brand-color);
-        }
-        .sub-menu {
-            li a {
+    .navbox .widget_nav_menu {
+        margin-bottom: 24px;
+        ul.menu {
+            li.menu-item {
                 margin: 0;
-                padding: 10px 0 0 10px;
-                padding-bottom: 0;
-                text-transform: none;
-                display: list-item;
-                list-style-type: disc;
-                list-style-position: inside;
+            }
+            display: flex;
+            padding: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            border: 1px solid get-color(gray-02);
+            font-weight: 450;
+            a {
+                padding: 0;
                 color: get-color(gray-06);
             }
-            li.active a {
+            .active a {
                 color: get-color(osc-brand-color);
+            }
+            .sub-menu {
+                li a {
+                    margin: 0;
+                    padding: 10px 0 0 10px;
+                    padding-bottom: 0;
+                    text-transform: none;
+                    display: list-item;
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    color: get-color(gray-06);
+                }
+                li.active a {
+                    color: get-color(osc-brand-color);
+                }
             }
         }
     }
+}
+.sidebar-nav.desktop.sticky-container {
+    display: none; // Hide by default
+    @include breakpoint(large up) {
+        display: block; // Show on large and bigger devices
+    }
+}
+.sidebar-nav.tablet {
+    display: none; // Hide by default
+    @include breakpoint(medium down) {
+        display: block; // Show on medium and smaller devices
     }
 }
