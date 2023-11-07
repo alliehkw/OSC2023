@@ -1870,8 +1870,8 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": 0,
                                             "message": "",
+                                            "default_value": 0,
                                             "ui": 0,
                                             "ui_on_text": "",
                                             "ui_off_text": "",
@@ -1883,7 +1883,7 @@
                                             "name": "media",
                                             "aria-label": "",
                                             "type": "repeater",
-                                            "instructions": "",
+                                            "instructions": "You can upload jpgs, pngs, and pdfs",
                                             "required": 0,
                                             "conditional_logic": [
                                                 [
@@ -1922,9 +1922,9 @@
                                                     },
                                                     "return_format": "array",
                                                     "library": "all",
-                                                    "min_size": 0,
-                                                    "max_size": 0,
-                                                    "mime_types": "",
+                                                    "min_size": "",
+                                                    "max_size": "",
+                                                    "mime_types": ".jpeg, .jpg, .png, .pdf",
                                                     "parent_repeater": "field_654a35edb79f4"
                                                 }
                                             ],
@@ -2637,5 +2637,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699367492
+    "modified": 1699399105
 }
