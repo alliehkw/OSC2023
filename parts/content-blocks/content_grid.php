@@ -217,8 +217,6 @@ if (get_sub_field('custom_padding')) {
                                     echo $lowerRichText;;
                                 echo '</div>';
                             echo '</div>';
-                            // TO DO : loop thru testimonials and populate here 
-                            // add functionality so that you can click buttons or wait for the text to switch
                             if( have_rows('testimonials') ): 
                                 echo '<div class="cell large-6 medium-12 testimonials">';
                                 while( have_rows('testimonials') ): the_row();
@@ -254,6 +252,46 @@ if (get_sub_field('custom_padding')) {
                             echo '<div>';
                         echo '</div>';
                         echo '</div>';
+                    elseif($contentType == 'research') :
+                        $display_type = get_sub_field('display_type');
+                        echo '<div class="grid-x grid-padding-x research ' . $display_type . '">';
+                        if($display_type == "row_line") :
+                            if( have_rows('research') ): 
+                                while( have_rows('research') ): the_row(); 
+                                    $title = get_sub_field('title');
+                                        echo '<ul class="cell xlarge-12 research-info">';
+                                            echo '<li class="research-title">';
+                                                echo $title;
+                                            echo '</li>';
+                                        echo '</ul>';
+                                endwhile;
+                            endif;
+                        elseif($display_type == "card_block") :
+                            if( have_rows('research') ): 
+                                while( have_rows('research') ): the_row(); 
+                                    $title = get_sub_field('title');
+                                    $author = get_sub_field('author');
+                                    $summary = get_sub_field('summary');
+                                        echo '<div class="cell medium-6 small-12 research-info ">';
+                                            echo '<div class="card-block">';
+                                                echo '<div class="research-title">';
+                                                    echo $title;
+                                                echo '</div>';
+                                                echo '<div class="author">';
+                                                    echo $author;
+                                                echo '</div>';
+                                            echo '</div>';
+                                            echo '<div class="research-title">';
+                                                echo $title;
+                                            echo '</div>';
+                                            echo '<div class="summary">';
+                                                echo $summary;
+                                            echo '</div>';
+                                        echo '</div>';
+                                endwhile;
+                            endif;
+                        echo '</div>';
+                        endif;
                     endif;
                 ?>
             </div>

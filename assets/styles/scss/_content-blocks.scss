@@ -544,6 +544,61 @@ div::-webkit-scrollbar {
 		}
 	  }
 }
+
+// RESEARCH
+.research {
+	&.card_block {
+		gap: 32px 0;
+		.research-title {
+			color: get-color('gray-06');
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 150%;
+			letter-spacing: 0.56px;
+			text-transform: uppercase;
+			margin-bottom: 8px;
+		}
+		.summary {
+			color: get-color(gray-05);
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%;
+			letter-spacing: -0.16px;
+		}
+		div.card-block {
+			display: flex;
+			width: 186.183px;
+			height: 263.473px;
+			padding: 66.653px 12.594px 37.2px 12.59px;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+			flex-shrink: 0;
+			border-radius: 2px;
+			background: linear-gradient(180deg, #008771 0%, #004154 100%);
+			margin-bottom: 24px;
+			.research-title {
+				color: white;
+				font-size: 14px;
+				font-family: "Petersburg, Regular", sans-serif;
+			}
+			.author {
+				color: white;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 8.762px;
+			}
+		}
+	}
+
+	&.row_line {
+		.research-title {
+			color: get-color(gray-05);
+		}
+	}
+}
 // Remove content-block padding when looping through child content for pages that have side bars
 .child-content .content-block {
 	padding: 0;

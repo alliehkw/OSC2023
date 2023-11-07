@@ -40,6 +40,8 @@ get_header();
                             // Get the 'Sidebar Nav' select subfield value
                             $selected_sidebar = get_sub_field('sidebar_nav');
                             if ($selected_sidebar && is_active_sidebar($selected_sidebar)) {
+                                // The sidebar is different for desktop and tablet and mobile. This is handled in the
+                                // individual sidebar php files and with css display: none
                                 get_sidebar($selected_sidebar);
                             }
                         }

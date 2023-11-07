@@ -1,7 +1,4 @@
-<!-- READ MORE SECTION POPULATION  -->
-
 <?php
-// Related Posts Function, matches posts by tags - call using joints_related_posts(); )
 function joints_related_posts() {
 	global $post;
 	$tag_arr = '';
@@ -34,7 +31,7 @@ function joints_related_posts() {
 							<?php endif; ?>
 						</div>
 					</div>
-					<div class="related-post-text">
+					<div class="related-post-text doofus">
 						<?php get_template_part( 'parts/content', 'byline' ); ?>
 						<h6 class="related-post-link"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h6>
 					</div>
@@ -67,7 +64,7 @@ function joints_related_posts() {
 								<?php endif; ?>
 							</div>
 						</div>
-					<div class="related-post-text">
+					<div class="related-post-text kenny">
 						<?php get_template_part( 'parts/content', 'byline' ); ?>
 						<h6 class="related-post-link"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h6>
 					</div>
