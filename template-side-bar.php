@@ -40,8 +40,16 @@ get_header();
                             // Get the 'Sidebar Nav' select subfield value
                             $selected_sidebar = get_sub_field('sidebar_nav');
                             if ($selected_sidebar && is_active_sidebar($selected_sidebar)) {
-                                echo '<div class="cell small-12 medium-3 sidebar-nav" data-sticky-container>';
+                                // The 'desktop' version
+                                echo '<div class="cell medium-12 large-3 sidebar-nav desktop" data-sticky-container>';
                                     echo '<div class="sticky navbox" data-sticky data-top-anchor="top-anchor:top" data-btm-anchor="bottom-anchor:bottom" data-options="marginTop:4;">';
+                                        get_sidebar($selected_sidebar);
+                                    echo '</div>';
+                                echo '</div>';
+                                // TO DO : it can't call the sidebar twice so it won't display the sidebar for tablet how do I fix this?
+                                // The 'tablet' version
+                                echo '<div class="cell medium-12 large-3 sidebar-nav tablet" data-sticky-container>';
+                                    echo '<div class="sticky navbox" data-options="marginTop:4;">';                                        
                                         get_sidebar($selected_sidebar);
                                     echo '</div>';
                                 echo '</div>';

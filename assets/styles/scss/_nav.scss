@@ -498,6 +498,21 @@ div.blogpage-class.sticky-container.scrolled {
 
 // SIDEBAR NAV
 .sidebar-nav {
+    &.tablet {
+        display: none; // Hide by default
+        @include breakpoint(medium down) {
+            display: block; // Show on medium and smaller devices
+        }
+    }
+    &.desktop {
+        display: none; // Hide by default
+        @include breakpoint(large up) {
+            display: block; // Show on large and bigger devices
+        }
+    }
+    @include breakpoint (medium down) {
+        margin-bottom: 48px;
+    }
     .sidebar .widget_nav_menu {
     margin-bottom: 24px;
     .menu {

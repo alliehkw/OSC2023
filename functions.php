@@ -57,3 +57,4 @@ require_once(get_template_directory().'/functions/get-the-archive-title.php');
 
 // Include the custom-scroll.php file to detect our scroll position
 require get_template_directory() . '/functions/custom-scroll.php';
+

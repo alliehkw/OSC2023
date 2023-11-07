@@ -22,4 +22,3 @@ function remove_archive_prefix($title) {
 }
 
 add_filter('get_the_archive_title', 'remove_archive_prefix');
-?>

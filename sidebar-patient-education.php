@@ -4,7 +4,7 @@
  */
  ?>
 
-<div id="patient-education" class="sidebar small-12 medium-3 large-3 cell" role="complementary">
+<div id="patient-education" class="sidebar small-12 medium-12 large-3 cell" role="complementary">
 
 	<?php if ( is_active_sidebar( 'patient-education' ) ) : ?>
 
