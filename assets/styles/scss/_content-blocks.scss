@@ -516,20 +516,6 @@ div::-webkit-scrollbar {
 		padding: 40px;
 		gap: 16px;
 		align-items: center;
-		.stars {
-			--percent: calc(var(--stars)/5 * 100%);
-			display: inline-block;
-			font-size: var(--star-size);
-			font-family: Times;
-			line-height: 1;
-			&::before {
-			  content: '★★★★★';
-			  letter-spacing: 3px;
-			  background: linear-gradient(90deg, get-color(star-color) var(--percent), get-color(star-background) var(--percent));
-			  background-clip: text;
-			  -webkit-text-fill-color: transparent;
-			}
-		  }
 		  .star_rating {
 			display: flex;
 			justify-content: center;
@@ -542,6 +528,22 @@ div::-webkit-scrollbar {
 	}
 }
 
+.star_rating {
+	.stars {
+		--percent: calc(var(--stars)/5 * 100%);
+		display: inline-block;
+		font-size: 24px;
+		font-family: Times;
+		line-height: 1;
+		&::before {
+		  content: '★★★★★';
+		  letter-spacing: 3px;
+		  background: linear-gradient(90deg, get-color(star-color) var(--percent), get-color(star-background) var(--percent));
+		  background-clip: text;
+		  -webkit-text-fill-color: transparent;
+		}
+	  }
+}
 // Remove content-block padding when looping through child content for pages that have side bars
 .child-content .content-block {
 	padding: 0;
@@ -636,3 +638,121 @@ img.board-cert {
 	}
 }		
   
+// TESTIMONAILS ROTATOR
+.testimonial-rotator {
+	z-index: 1;
+	display: flex;
+	height: 500px;
+	@include breakpoint (medium down) {
+		height: auto;
+		margin-bottom: 64px;
+	}
+	@include breakpoint (small down) {
+		margin-bottom: 56px;
+	}
+	max-width: 75rem;
+	width: 100%;
+	.testimonials-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		@include breakpoint (medium down) {
+			margin-bottom: 64px;
+			height: auto;
+		}
+		@include breakpoint (small down) {
+			margin-bottom: 56px;
+		}
+	}
+	.rotator {
+		display: flex;
+		flex-direction: column;
+		background-color: get-color(gray-01);
+		border-radius: 2px;
+		padding: 40px;
+		gap: 24px;
+		width: 100%;
+		z-index: 2;
+		overflow: auto;
+		div.content {
+			color: get-color(gray-06);
+		}
+		div.author {
+			color: get-coor(gray-06);
+			font-weight: bold;
+		}
+		div.date {
+			color: get-color(gray-04);
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 20px;
+			letter-spacing: 1.4px;
+			text-transform: uppercase;
+		}
+		height: 500px;
+		@include breakpoint (medium down) {
+			height: auto;
+			max-height: 414px;
+		}
+		@include breakpoint (small down) {
+			height: auto;
+			max-height: 516px;
+			margin-bottom: 64px;
+		}
+	}
+	.single-testimonial {
+		display: none;
+		z-index: 3;
+	}
+	.single-testimonial.active {
+		display: block;
+		z-index: 3;
+	}
+}
+
+.testimonial-nav {
+	justify-content: right;
+	position: relative;
+	@include breakpoint (medium down) {
+		margin-bottom: 64px;
+	}
+	@include breakpoint (small down) {
+		display: none;
+	}
+	margin-top: -28px;
+	margin-right: 48px;
+	display: flex;
+	gap: 16px;
+	z-index: 10;
+	button {
+		cursor: pointer;
+		border-radius: 2px;
+		width: 56px;
+		height: 56px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.prev-testimonial {
+		background-color: white;
+		border: 1px solid get-color(gray-06);
+	}
+	.next-testimonial {
+		background-color: get-color(green-04);
+		border: 1px solid get-color(green-04);
+	}
+}
+
+.lower-testimonials-text {
+	&.desktop {
+		@include breakpoint (medium down) {
+			display: none;
+		}
+	}
+	&.tablet {
+		@include breakpoint (large up) {
+			display: none;
+		}
+	}
+}

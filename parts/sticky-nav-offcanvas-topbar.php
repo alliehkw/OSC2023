@@ -8,7 +8,7 @@
 
 <!-- // Apply homepage-class to nav bar if on homepage to allow for proper color formatting  -->
 <div data-sticky-container class="<?php echo (is_front_page()) ? 'homepage-class' : ''; ?><?php echo (is_home() || is_category() || is_single()) ? ' blogpage-class' : ''; ?>">
-	<div class="top-bar" id="top-bar-menu" data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%">
+	<div class="top-bar" id="top-bar-menu" data-sticky data-off-canvas-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%">
 		<div class="header-container">
 			<div class="inner-header">
 				<div class="top-bar-left float-left">

@@ -249,9 +249,9 @@ ul.pagination {
 .single-article {
     display: flex;
     justify-content: space-between;
-    margin: 64px 0;
+    margin: 120px 0;
     @include breakpoint (medium down) {
-        margin: 36px 0;
+        margin: 80px 0;
     }
     h5.read-more {
         color: get-color(gray-06);
@@ -336,4 +336,8 @@ div.blog-categories-container {
             color: get-color(gray-06);
         }
     }
+}
+
+.skip-link {
+    display: none;
 }
