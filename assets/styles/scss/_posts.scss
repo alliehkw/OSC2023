@@ -28,6 +28,12 @@
     }
 }
 
+.article-container.card_post + .article-container.card_post {
+    @include breakpoint (medium down) {
+        margin-top: 40px;
+    }
+}
+
 .blog-header {
     max-width: 75rem;
     width: 100%;
