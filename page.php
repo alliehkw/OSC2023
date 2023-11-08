@@ -24,5 +24,5 @@ get_header(); ?>
 
 	</div> <!-- end #content -->
 <?php wp_link_pages(); ?>
-<!-- <?php edit_post_link(__('Edit'), '', '', null, 'button edit-post-button'); ?> -->
+<?php edit_post_link(__('Edit'), '', '', null, 'button edit-post-button'); ?>
 <?php get_footer(); ?>

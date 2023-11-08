@@ -41,6 +41,32 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_654bf2b39b32c",
+                            "label": "Hero Type",
+                            "name": "hero_type",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "standard": "Standard",
+                                "video": "Video"
+                            },
+                            "default_value": "standard",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_632b5acdec0d7",
                             "label": "Supertitle",
                             "name": "supertitle",
@@ -88,7 +114,15 @@
                             "type": "tab",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_654bf2b39b32c",
+                                        "operator": "==",
+                                        "value": "standard"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -119,6 +153,51 @@
                             "return_format": "value",
                             "allow_null": 0,
                             "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_654bf2dc9b32d",
+                            "label": "Video Hero",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_654bf2b39b32c",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_654bf2f09b32e",
+                            "label": "Video Short Code",
+                            "name": "video_short_code",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -2913,5 +2992,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699456419
+    "modified": 1699476224
 }

@@ -1,7 +1,8 @@
-// .off-canvas-wrapper  {
-// 	height: 100vh;
-// 	overflow-y: auto;
-// }
+// HERO VIDEO 
+// -----------
+.aiovg-player-container #document{
+	display: none !important;
+}
 
 // SCROLL BAR
 // -----------
@@ -117,6 +118,28 @@ div::-webkit-scrollbar {
 	}
 }
 
+.text-content-video-hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-align: center;
+	margin: auto;
+	margin-top: -15%;
+	h1 {
+		font-size: 64px;
+		@include breakpoint (medium down) {
+			font-size: 48px !important;
+			padding: 16px;
+		}
+		@include breakpoint (small down) {
+			font-size: 24px !important;
+			padding: 12px;
+		}
+	}
+	
+}
 
 // HALF BLOCK
 // --------------
@@ -418,7 +441,7 @@ div::-webkit-scrollbar {
 				margin-top: 48px;
 			}
 		}
-		.button {
+		.button, .gform_button {
 			width: 100%;
 			background-color: get-color(green-04);
 			color: white;
@@ -468,6 +491,23 @@ div::-webkit-scrollbar {
 		display: grid;
 		grid-template-areas: 'select';
 	  }
+	input.gfield-choice-input {
+		@include breakpoint (medium up) {
+			margin: auto;
+			margin-bottom: 3px;
+		}
+		@include breakpoint (small down) {
+			margin: auto;
+			margin-bottom: auto;
+		}
+	}
+	.gfield_checkbox {
+		div.gchoice {
+			@include breakpoint (small down) {
+				display: inline-flex;
+			}
+		}
+	}
 
 	select,
 	.ginput_container_select::after { 
@@ -684,7 +724,7 @@ div::-webkit-scrollbar {
 			font-family: "Petersburg, Regular", sans-serif;
 			text-transform: capitalize;
 			padding: 0 24px;
-			border: 3px solid red;
+			// border: 3px solid red;
 			border-radius: 4px;
 			@include breakpoint (small down) {
 				height: 432px;
@@ -710,7 +750,7 @@ div::-webkit-scrollbar {
 					width: auto;
 					min-height: 100%;
 					position: absolute;
-					border: 3px solid get-color(gray-03);
+					border: 3px inset solid get-color(gray-03);
 					border-radius: 4px;
 					padding: 0;
 					object-fit: cover;

@@ -275,6 +275,15 @@ ul.pagination {
     display: flex;
     justify-content: space-between;
     margin: 120px 0;
+    li {
+        font-size: 20px;
+        @include breakpoint (medium down) {
+            font-size: 18px;
+        }
+        @include breakpoint (small down) {
+            font-size: 16px;
+        }
+    }
     @include breakpoint (medium down) {
         margin: 80px 0;
     }

@@ -18,7 +18,7 @@ get_header(); ?>
 
 					<div class="large-7 cell">
 					<header class="article-header">
-						<!-- TO DO : add in "BY" section for single posts  -->
+						<!-- TO DO : add in "BY" section for single posts if OSC wants -->
 						<?php get_template_part( 'parts/content', 'byline-single' ); ?>	
 						<h2 class="title"><?php the_title(); ?></h2>	
 									
@@ -47,3 +47,6 @@ get_header(); ?>
 	</div> <!-- end #inner-content -->
 
 </div> <!-- end #content -->
+<?php wp_link_pages(); ?>
+<?php edit_post_link(__('Edit'), '', '', null, 'button edit-post-button'); ?>
+<?php get_footer(); ?>
