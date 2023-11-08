@@ -2550,6 +2550,27 @@
                                     "ui": 1,
                                     "bidirectional_target": [],
                                     "parent_repeater": "field_5d51bf28dede2"
+                                },
+                                {
+                                    "key": "field_654ba560a4fce",
+                                    "label": "Display like regular post?",
+                                    "name": "display_like_regular_post",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Check this if you want this to appear like a regular blog post, not the large featured post. For example, under the latest news section.",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "parent_repeater": "field_5d51bf28dede2"
                                 }
                             ]
                         }
@@ -2892,5 +2913,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699448615
+    "modified": 1699456419
 }

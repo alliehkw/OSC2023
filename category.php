@@ -4,10 +4,6 @@
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
-// USE THIS FOR "FILTERED" BLOG POSTS
-// SHOWS ALL OF THE POSTS 
-// ADD FEATURED BLOG POST 
-// ADD IN BLOG MENU 
 get_header(); ?>
 			
 	<div class="content">
