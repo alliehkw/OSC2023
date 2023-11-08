@@ -1908,11 +1908,37 @@
                                             "sub_fields": [
                                                 {
                                                     "key": "field_654a368fc6543",
-                                                    "label": "Media",
+                                                    "label": "Cover Image",
+                                                    "name": "cover_image",
+                                                    "aria-label": "",
+                                                    "type": "image",
+                                                    "instructions": "Include the title in the file - this will be displayed on the page. If media is a PDF upload the cover image here.",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "library": "all",
+                                                    "min_width": "",
+                                                    "min_height": "",
+                                                    "min_size": "",
+                                                    "max_width": "",
+                                                    "max_height": "",
+                                                    "max_size": "",
+                                                    "mime_types": "",
+                                                    "preview_size": "medium",
+                                                    "parent_repeater": "field_654a35edb79f4"
+                                                },
+                                                {
+                                                    "key": "field_654b73b797de6",
+                                                    "label": "Media Upload",
                                                     "name": "media",
                                                     "aria-label": "",
                                                     "type": "file",
-                                                    "instructions": "Include the title in the file - this will be displayed on the page",
+                                                    "instructions": "Upload PDFs here. This will allow the cover image to link to the PDF.",
                                                     "required": 0,
                                                     "conditional_logic": 0,
                                                     "wrapper": {
@@ -1924,7 +1950,7 @@
                                                     "library": "all",
                                                     "min_size": "",
                                                     "max_size": "",
-                                                    "mime_types": ".jpeg, .jpg, .png, .pdf",
+                                                    "mime_types": "",
                                                     "parent_repeater": "field_654a35edb79f4"
                                                 }
                                             ],
@@ -1936,7 +1962,7 @@
                                             "name": "include_external_link",
                                             "aria-label": "",
                                             "type": "true_false",
-                                            "instructions": "",
+                                            "instructions": "Check if you want to link this post to an external website.",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -1944,8 +1970,8 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": 0,
                                             "message": "",
+                                            "default_value": 0,
                                             "ui": 0,
                                             "ui_on_text": "",
                                             "ui_off_text": "",
@@ -2637,5 +2663,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699399105
+    "modified": 1699443758
 }

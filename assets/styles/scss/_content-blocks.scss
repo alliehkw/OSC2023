@@ -611,30 +611,40 @@ div::-webkit-scrollbar {
 		}
 		.medias {
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
+			gap: 16px;
 			margin-left: auto;
 			margin-right: auto;
+			flex-wrap: wrap;
 		}
-		.media-item {
+		.media-item, a.media-item-with-link {
 			position: relative;
 			margin-top: 32px;
-			height: 400px;
 			margin-left: auto;
 			margin-right: auto;
-			@include breakpoint (medium down) {
-				height: 365px;
-			}
-			@include breakpoint (small down) {
-				height: 159px;
-			}
+			text-decoration: none;
 			width: auto;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			img, iframe {
-				height: 100%;
+			.media-item-image {
+				height: 400px;
 				width: auto;
+				overflow: hidden;
+				@include breakpoint (medium down) {
+					height: 365px;
+				}
+				@include breakpoint (small down) {
+					height: 159px;
+				}
+			}
+			img {
+				width: auto;
+				height: 100%;
+				object-fit: contain;
+    			object-position: center; 
+				padding: 0;
 			}
 			.media-title {
 				color: get-color(gray-04);
@@ -643,6 +653,11 @@ div::-webkit-scrollbar {
 				@include breakpoint (small down) {
 					font-size: 14px;
 				}
+			}
+		}
+		a.media-item-with-link {
+			.media-item {
+				margin: 0;
 			}
 		}
 	}
