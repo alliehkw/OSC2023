@@ -311,7 +311,10 @@ div.sticky-container, div.sticky-container.unscrolled {
         }
     }
     .is-dropdown-submenu {
-        background-color: transparent;
+        background-color: white;
+        a, .active>a { 
+            color: get-color(gray-06);
+        }
     }
 }
 

@@ -318,7 +318,7 @@
                                         "doctor_modal": "Doctor Modal",
                                         "accolades": "Accolades",
                                         "testimonial_rotator": "Testimonial Rotator",
-                                        "research": "Research"
+                                        "research": "Research \/ Publications"
                                     },
                                     "default_value": false,
                                     "return_format": "value",
@@ -1745,7 +1745,8 @@
                                     },
                                     "choices": {
                                         "row_line": "Row",
-                                        "card_block": "Card"
+                                        "card_block": "Card",
+                                        "publications": "Publications"
                                     },
                                     "default_value": false,
                                     "return_format": "value",
@@ -1758,7 +1759,7 @@
                                 },
                                 {
                                     "key": "field_654a37b1ee610",
-                                    "label": "Research",
+                                    "label": "Research \/ Publications",
                                     "name": "research",
                                     "aria-label": "",
                                     "type": "repeater",
@@ -1864,7 +1865,15 @@
                                             "type": "true_false",
                                             "instructions": "",
                                             "required": 0,
-                                            "conditional_logic": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "!=",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
                                             "wrapper": {
                                                 "width": "",
                                                 "class": "",
@@ -1891,6 +1900,11 @@
                                                         "field": "field_654a35adb79f3",
                                                         "operator": "==",
                                                         "value": "1"
+                                                    },
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "!=",
+                                                        "value": "publications"
                                                     }
                                                 ]
                                             ],
@@ -1964,7 +1978,15 @@
                                             "type": "true_false",
                                             "instructions": "Check if you want to link this post to an external website.",
                                             "required": 0,
-                                            "conditional_logic": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "!=",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
                                             "wrapper": {
                                                 "width": "",
                                                 "class": "",
@@ -1991,6 +2013,213 @@
                                                         "field": "field_654a36e8c6544",
                                                         "operator": "==",
                                                         "value": "1"
+                                                    },
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "!=",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "parent_repeater": "field_654a37b1ee610"
+                                        },
+                                        {
+                                            "key": "field_654b870db124c",
+                                            "label": "Subtext",
+                                            "name": "subtext",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "==",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_654a37b1ee610"
+                                        },
+                                        {
+                                            "key": "field_654b838a276dc",
+                                            "label": "Cover Image",
+                                            "name": "cover_image_publication",
+                                            "aria-label": "",
+                                            "type": "image",
+                                            "instructions": "Include the title in the file - this will be displayed on the page. If media is a PDF upload the cover image here.",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "==",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "medium",
+                                            "parent_repeater": "field_654a37b1ee610"
+                                        },
+                                        {
+                                            "key": "field_654b8564bc831",
+                                            "label": "Link publication to pdf or external link?",
+                                            "name": "link_publication",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "==",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": "",
+                                            "parent_repeater": "field_654a37b1ee610"
+                                        },
+                                        {
+                                            "key": "field_654b84efbc82f",
+                                            "label": "Link Type",
+                                            "name": "link_type",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654b8564bc831",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "==",
+                                                        "value": "publications"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "pdf": "PDF",
+                                                "external_link": "External Link"
+                                            },
+                                            "default_value": false,
+                                            "return_format": "value",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "parent_repeater": "field_654a37b1ee610"
+                                        },
+                                        {
+                                            "key": "field_654b838c276dd",
+                                            "label": "Media Upload",
+                                            "name": "media_publication",
+                                            "aria-label": "",
+                                            "type": "file",
+                                            "instructions": "Upload PDFs here. This will allow the cover image to link to the PDF.",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "==",
+                                                        "value": "publications"
+                                                    },
+                                                    {
+                                                        "field": "field_654b84efbc82f",
+                                                        "operator": "==",
+                                                        "value": "pdf"
+                                                    },
+                                                    {
+                                                        "field": "field_654b8564bc831",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array",
+                                            "library": "all",
+                                            "min_size": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "parent_repeater": "field_654a37b1ee610"
+                                        },
+                                        {
+                                            "key": "field_654b8663bc835",
+                                            "label": "External Link",
+                                            "name": "external_link_publications",
+                                            "aria-label": "",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_654a3548404ad",
+                                                        "operator": "==",
+                                                        "value": "publications"
+                                                    },
+                                                    {
+                                                        "field": "field_654b84efbc82f",
+                                                        "operator": "==",
+                                                        "value": "external_link"
                                                     }
                                                 ]
                                             ],
@@ -2663,5 +2892,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699443758
+    "modified": 1699448615
 }
