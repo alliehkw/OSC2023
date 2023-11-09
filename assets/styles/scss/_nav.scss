@@ -13,7 +13,12 @@
 .top-bar .menu {
     align-items: center;
 }
-
+ul#main-nav {
+    // height: 100%;
+    li {
+        padding: 0;
+    }
+}
 li.menu-item {
     font-size: 14px;
     font-style: normal;
@@ -24,7 +29,7 @@ li.menu-item {
     a {
         display: flex;
         flex-direction: row;
-        gap: 8px;
+        // gap: 8px;
     }
 }
 
@@ -45,30 +50,11 @@ li.menu-item {
     }
 }
 
-// .menu li, .menu a  {
-//     padding: 0;
-//     margin-right: 24px;
-// }
-
-// .dropdown.menu>li>a {
-//     padding: 0;
-//     padding-top: 4px;
-// }
-
 .is-dropdown-submenu {
     border: 0;
     border-radius: 4px;
     margin-top: 15px;
 }
-
-// .is-dropdown-submenu-parent {
-//     padding-top: 4px;
-// }
-
-// .dropdown.menu>li.is-dropdown-submenu-parent>a, 
-// .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a  {
-//     padding-right: 0.5rem !important;
-// }
 
 .dropdown.menu.medium-horizontal>li.opens-right>.is-dropdown-submenu {
     margin-top: 28px;
@@ -92,19 +78,21 @@ li.nav-button + li.nav-button {
     letter-spacing: 0.046875em;
     text-transform: uppercase;
     font-weight: 450;
+    @include breakpoint (medium down) {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
     a {
         padding: 10px 16px;
 		padding-top: 14px;
         @include breakpoint (medium down) {
-            padding: 20px;
+            padding: 24px;
+            padding-left: 0;
         }
         border-radius: 2px;
         border: solid 0.0625em;
-        margin: 0;
     }
-     // TO DO : change nav colors based on page location and scroll position
     &.low-contrast a {
-        // TO DO : i made the color red for now as a place holder but it needs to be changed in the final 
         color: white;
         border: 1px solid white;
         background-color: transparent;
@@ -190,6 +178,7 @@ li.logo {
 	flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
     @include breakpoint (medium down) {
         flex: 0 0 0 !important;
         width: auto !important;
@@ -207,6 +196,7 @@ li.logo {
 
 .top-bar-left {
     width: fit-content;
+    height: 100%;
     margin: 0;
     padding: 0;
     ul {
@@ -217,25 +207,18 @@ li.logo {
     }
 }
 
-
-
-
 .main-content-with-sidebar {
     display: flex;
     flex-direction: column;
 }
 
 // Tablet and mobile top nav menu formatting 
+// ACCORDION FORMATTING
 .accordion-menu {
-    // I had to use !important to over write a lot of base formatting for the nav bar
-    li.nav-button {
-        margin-left: 16px !important;
-        margin-right: 16px !important;
-    }
     .is-accordion-submenu-parent, .nav-button, li {
         border-bottom: 1px solid get-color(gray-02);
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 24px;
+        margin-right: 24px;
         width: 100%;
         a {
             color: get-color(gray-06) !important;
@@ -243,8 +226,8 @@ li.logo {
             font-weight: bold;
             letter-spacing: 1.4px;
             text-transform: uppercase;
-            padding: 24px 4px !important;
-            margin-right: 0;
+            padding: 24px;
+            padding-left: 0;
             border: none !important;
             background-color: white !important;
         }   
@@ -253,14 +236,14 @@ li.logo {
         border-bottom: none;
         margin: 0 !important;
         a {
-        padding: 24px 4px;
-        text-transform: none;
-        background-color: white;
-        text-transform: capitalize;
-        color: get-color(gray-06);
-        font-size: 16px;
-        font-weight: normal;
-        border-bottom: none;
+            padding: 24px 0;
+            text-transform: none;
+            background-color: white;
+            text-transform: capitalize;
+            color: get-color(gray-06);
+            font-size: 16px;
+            font-weight: normal;
+            border-bottom: none;
         }
     }
 }
@@ -271,8 +254,6 @@ li.logo {
 }
 // // TO DO : 
 // // why does the nav bar refresh all jumpy
-// // should the drop downs left align with their parent? i think they right align rn
-
 // SPECIAL FORMATTING NAV BAR --> TOP/UNSCROLLED
 div.sticky-container, div.sticky-container.unscrolled {
     .header-container {
@@ -541,3 +522,10 @@ div.blogpage-class.sticky-container.scrolled {
         display: block; // Show on medium and smaller devices
     }
 }
+
+
+// .inner-header, .top-bar-left ul.menu li a, .top-bar-right, ul#main-nav li, .top-bar-right ul li {
+//     height: 72px;
+//     align-items: center;
+//     display: flex;
+// }
