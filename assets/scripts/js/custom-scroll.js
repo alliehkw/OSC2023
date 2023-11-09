@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > 70) {
       header.classList.add("scrolled");
       header.classList.remove("unscrolled");
-      if (!isBlogPage && !isCategoryPage && !isSinglePage) {
-        imageLogo.src = templateUrl + "/assets/images/Logo-colored-1.svg";
-      }
+      imageLogo.src = templateUrl + "/assets/images/Logo-colored-1.svg";
     } else {
       header.classList.remove("scrolled");
       header.classList.add("unscrolled");
       if (isBlogPage || isCategoryPage || isSinglePage) {
+        imageLogo.src = templateUrl + "/assets/images/Logo-colored-1.svg";
+      } else {
         imageLogo.src = templateUrl + "/assets/images/Logo-colored-2.svg";
       }
     }
