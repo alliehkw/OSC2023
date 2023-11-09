@@ -14,11 +14,6 @@
     align-items: center;
 }
 
-ul#main-nav {
-    display: flex;
-    gap: 16px;
-}
-
 li.menu-item {
     font-size: 14px;
     font-style: normal;
@@ -30,7 +25,6 @@ li.menu-item {
         display: flex;
         flex-direction: row;
         gap: 8px;
-        padding: 0!important;
     }
 }
 
@@ -160,18 +154,9 @@ li.logo {
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
 .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
 .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-    border-style: solid;
-    width: 0;
-    display: flex;
-    align-items: center;
-    margin-top: 3px;
-    // padding-right: 0.5rem !important;
-    // white
+    border-style: none;
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    // black
-    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     @include breakpoint (medium down) {
-        // black
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
 }
@@ -179,15 +164,11 @@ li.logo {
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
 .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
 .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-    transform: rotate(180deg);
-    // white 
-    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    // black
-    // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    // @include breakpoint (medium down) {
-        // black
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    // }
+    transform: none;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    @include breakpoint (medium down) {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
 }
 
 .close-button, .close-button.medium {
@@ -314,27 +295,15 @@ div.sticky-container, div.sticky-container.unscrolled {
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
     .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        border-style: solid;
-        width: 0;
-        display: flex;
-        align-items: center;
-        margin-top: 3px;
-        // padding-right: 0.5rem !important;
-        // white
+        border-style: none;
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     // AFTER
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
     .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        // transform: none;
-        transform: rotate(180deg);
-        // white 
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        transform: none;
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     .menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
         color: white;
@@ -382,27 +351,15 @@ div.sticky-container.scrolled {
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
     .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        border-style: solid;
-        width: 0;
-        display: flex;
-        align-items: center;
-        margin-top: 3px;
-        // padding-right: 0.5rem !important;
-        // white
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
+        border-style: none;
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     // AFTER
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
     .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        // transform: none;
-        transform: rotate(180deg);
-        // white 
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        transform: none;
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     .menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
         color: get-color(gray-06);
@@ -461,27 +418,15 @@ div.blogpage-class.sticky-container, div.blogpage-class.sticky-container.unscrol
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
     .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        border-style: solid;
-        width: 0;
-        display: flex;
-        align-items: center;
-        margin-top: 3px;
-        // padding-right: 0.5rem !important;
-        // white
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
+        border-style: none;
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     // AFTER
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
     .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        // transform: none;
-        transform: rotate(180deg);
-        // white 
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        transform: none;
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     .menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
         color: get-color(gray-06);
@@ -518,27 +463,15 @@ div.blogpage-class.sticky-container.scrolled {
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after, 
     .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        border-style: solid;
-        width: 0;
-        display: flex;
-        align-items: center;
-        margin-top: 3px;
-        // padding-right: 0.5rem !important;
-        // white
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.83594 6L8.83594 10L12.8359 6' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
+        border-style: none;
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 6L8.16699 10L12.167 6' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     // AFTER
     .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent.is-active>a::after, 
     .accordion-menu .is-accordion-submenu-parent.is-active:not(.has-submenu-toggle)>a::after,
     .accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after  {
-        // transform: none;
-        transform: rotate(180deg);
-        // white 
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16797 10L8.16797 6L12.168 10' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        // black
-        // content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        transform: none;
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M4.16699 10L8.16699 6L12.167 10' stroke='%23112E3D' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
     .menu li, .menu a, .menu>li.is-active>a, .menu .active>a, .dropdown.menu>li.is-active>a {
         color: get-color(gray-06);
