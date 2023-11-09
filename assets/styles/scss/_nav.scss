@@ -13,6 +13,7 @@
 .top-bar .menu {
     align-items: center;
 }
+
 ul#main-nav {
     // height: 100%;
     li {
@@ -54,6 +55,7 @@ li.menu-item {
     border: 0;
     border-radius: 4px;
     margin-top: 15px;
+    z-index: 15;
 }
 
 .dropdown.menu.medium-horizontal>li.opens-right>.is-dropdown-submenu {
@@ -514,6 +516,7 @@ div.blogpage-class.sticky-container.scrolled {
     display: none; // Hide by default
     @include breakpoint(large up) {
         display: block; // Show on large and bigger devices
+        z-index: 1;
     }
 }
 .sidebar-nav.tablet {
@@ -523,9 +526,7 @@ div.blogpage-class.sticky-container.scrolled {
     }
 }
 
-
-// .inner-header, .top-bar-left ul.menu li a, .top-bar-right, ul#main-nav li, .top-bar-right ul li {
-//     height: 72px;
-//     align-items: center;
-//     display: flex;
-// }
+// FOOTER NAV
+.footer-nav .menu a {
+    padding: 0;
+}
