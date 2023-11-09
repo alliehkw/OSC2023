@@ -66,12 +66,14 @@
 @font-face {
   font-family: "Apertura, Regular";
   src:
-    url("./fonts/Apertura/Regular.otf") format("opentype")
+    url("./fonts/Apertura/Regular.otf") format("opentype");
+  font-display: block;
 }
 @font-face {
   font-family: "Petersburg, Regular";
   src:
-    url("./fonts/Petersburg/Regular.otf") format("opentype")
+    url("./fonts/Petersburg/Regular.otf") format("opentype");
+  font-display: block;
 }
 
 // 1. Global

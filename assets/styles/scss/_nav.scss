@@ -41,10 +41,10 @@ li.menu-item {
     margin-right: 24px;
 }
 
-.dropdown.menu>li>a {
-    padding: 0;
-    padding-top: 4px;
-}
+// .dropdown.menu>li>a {
+//     padding: 0;
+//     padding-top: 4px;
+// }
 
 .is-dropdown-submenu {
     border: 0;
@@ -130,7 +130,9 @@ li.logo {
         padding: 0px 32px;
     }
     margin: 0;
-    margin-right: 16px;
+    a {
+        margin-right: 0;
+    }
 }
 
 // AFTER 
