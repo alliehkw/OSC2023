@@ -27,7 +27,7 @@ get_header();
             <?php endif;
         }
     ?>
-    <div class="content-block">
+    <div class="content-block" id="sidebar">
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <!-- Sidebar Logic -->

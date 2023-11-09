@@ -15,7 +15,9 @@
 }
 
 ul#main-nav {
-    // height: 100%;
+    li.nav-button a {
+        min-height: auto;
+    }
     li {
         padding: 0;
     }
