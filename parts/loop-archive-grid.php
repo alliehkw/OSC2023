@@ -14,11 +14,15 @@ $grid_columns = 3; ?>
 				<?php 
 				// Get the URL of the post thumbnail.
 				$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-
 				// Check if the URL is not empty.
 				if ( !empty($thumbnail_url) ): ?>
 					<section class="featured-image" itemprop="text">
-						<?php the_post_thumbnail('full'); ?>
+						<?php the_post_thumbnail('full');?>
+					</section>
+				<!-- If no image populate with the placeholder image -->
+				<?php else :?>
+					<section class="featured-image" itemprop="text">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/Placeholder-blog-image.jpeg" />
 					</section>
 				<?php endif; ?>
 				

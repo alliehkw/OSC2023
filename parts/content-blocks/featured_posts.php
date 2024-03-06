@@ -17,7 +17,6 @@ echo '<div class="content-block featured-posts">';
                             $categories = get_the_category($postObject); 
                             $category = $categories[0]->name;
                             $date = get_the_date('', $postObject->ID);
-
                             if($post_type_title != 'Posts') :
                                 $fp_archive_title = $post_type_title; 
                             else :
@@ -39,16 +38,23 @@ echo '<div class="content-block featured-posts">';
                             echo '<div class="cell">';
                                 echo '<div class="post-card grid-x">';
                                     echo '<div class="cell small-12 medium-12 large-6">';
-                                        echo '<div class="image">';
-                                            echo '<img class="featured-image" src="' . $fp_img . '" alt="'. $image_alt . '" />';
-                                        echo '</div>';
+                                        if (!empty($image_id)) :
+                                            echo '<div class="image">';
+                                                echo '<img class="featured-image" src="' . $fp_img . '" alt="'. $image_alt . '" />';
+                                            echo '</div>';
+                                        else :
+                                            // If no image populate with the placeholder image
+                                            echo '<div class="image">';
+                                                echo '<img src="' . get_template_directory_uri() . '/assets/images/Placeholder-blog-image.jpeg" />';
+                                            echo '</div>';
+                                        endif;
                                     echo '</div>';
                                     echo '<div class="cell small-12 medium-12 large-6">';
                                         echo '<div class="featured-post-text">';
                                             echo '<p class="featured-post">Featured Post</p>';
                                             echo '<h3>' . $fp_title . '</h3>';
                                             echo '<p class="excerpt">' . $fp_excerpt . '</p>';
-                                            echo '<a class="read-more" href="' . $link . '" title="' . $fp_title . '">'. __('Read more &raquo;', 'jointswp') .'</a>';
+                                            echo '<a class="read-more" id="category" href="' . $link . '" title="' . $fp_title . '">'. __('Read more &raquo;', 'jointswp') .'</a>';
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';
@@ -60,11 +66,16 @@ echo '<div class="content-block featured-posts">';
                             echo '<div class="article-container card_post cell large-4 medium-12">';
                                 echo '<article id="post-' . esc_attr($postObject->ID) . '" ' . join(' ', get_post_class('', $postObject->ID)) . ' role="article">';
                                     echo '<div class="image-and-header">';
-                                        if (!empty($thumbnail_url)) {
+                                        if (!empty($thumbnail_url)) :
                                             echo '<section class="featured-image" itemprop="text">';
-                                            echo get_the_post_thumbnail($postObject->ID, 'full');
+                                                echo get_the_post_thumbnail($postObject->ID, 'full');
                                             echo '</section>';
-                                        }
+                                        // If no image populate with the placeholder image
+                                        else :
+                                            echo '<section class="featured-image" itemprop="text">';
+                                                echo '<img src="' . get_template_directory_uri() . '/assets/images/Placeholder-blog-image.jpeg" />';
+                                            echo '</section>';
+                                        endif;
                                             echo '<header class="article-header">';
                                             get_template_part('parts/content', 'byline');
                                                 echo '<div class="title-box">';

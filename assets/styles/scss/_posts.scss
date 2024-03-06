@@ -275,6 +275,9 @@ ul.pagination {
     display: flex;
     justify-content: space-between;
     margin: 120px 0;
+    ul {
+        margin-top: 0;
+    }
     li {
         font-size: 20px;
         @include breakpoint (medium down) {
@@ -351,6 +354,9 @@ div.blog-categories-container {
     ul#menu-blog-categories {
         display: flex;
         gap: 24px 24px;
+        li {
+            padding: 0;
+        }
         a {
             font-size: 15px;
             font-style: normal;
@@ -359,6 +365,7 @@ div.blog-categories-container {
             letter-spacing: 0.75px;
             text-transform: uppercase;
             color: get-color(gray-03);
+            padding: 0;
         }
         a:hover {
             color: get-color(gray-04);

@@ -181,11 +181,11 @@
                         },
                         {
                             "key": "field_654bf2f09b32e",
-                            "label": "Video Short Code",
-                            "name": "video_short_code",
+                            "label": "Video URL",
+                            "name": "video_URL",
                             "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
+                            "type": "url",
+                            "instructions": "For YouTube videos only. Must have the following format:\r\nhttps:\/\/www.youtube.com\/embed\/**YOU VIDEO ID**\/?autoplay=1\/&mute=1",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -194,10 +194,40 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_654d5480f5d47",
+                            "label": "Video Poster",
+                            "name": "video_poster",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_654bf2b39b32c",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
                         }
                     ],
                     "min": "",
@@ -1408,6 +1438,33 @@
                                                     "parent_repeater": "field_653ff7574ebce"
                                                 },
                                                 {
+                                                    "key": "field_654e74619740d",
+                                                    "label": "Link Type",
+                                                    "name": "link_type",
+                                                    "aria-label": "",
+                                                    "type": "select",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "choices": {
+                                                        "page": "Page",
+                                                        "taxonomy": "Blog Post"
+                                                    },
+                                                    "default_value": false,
+                                                    "return_format": "value",
+                                                    "multiple": 0,
+                                                    "allow_null": 0,
+                                                    "ui": 0,
+                                                    "ajax": 0,
+                                                    "placeholder": "",
+                                                    "parent_repeater": "field_653ff7574ebce"
+                                                },
+                                                {
                                                     "key": "field_653ff75f4ebcf",
                                                     "label": "Page Link",
                                                     "name": "page_link",
@@ -1415,7 +1472,15 @@
                                                     "type": "page_link",
                                                     "instructions": "",
                                                     "required": 0,
-                                                    "conditional_logic": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_654e74619740d",
+                                                                "operator": "==",
+                                                                "value": "page"
+                                                            }
+                                                        ]
+                                                    ],
                                                     "wrapper": {
                                                         "width": "",
                                                         "class": "",
@@ -1427,6 +1492,40 @@
                                                     "allow_archives": 1,
                                                     "multiple": 0,
                                                     "allow_null": 0,
+                                                    "parent_repeater": "field_653ff7574ebce"
+                                                },
+                                                {
+                                                    "key": "field_654e74859740e",
+                                                    "label": "Blog Category Link",
+                                                    "name": "blog_category_link",
+                                                    "aria-label": "",
+                                                    "type": "taxonomy",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_654e74619740d",
+                                                                "operator": "==",
+                                                                "value": "taxonomy"
+                                                            }
+                                                        ]
+                                                    ],
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "taxonomy": "category",
+                                                    "add_term": 1,
+                                                    "save_terms": 0,
+                                                    "load_terms": 0,
+                                                    "return_format": "id",
+                                                    "field_type": "radio",
+                                                    "allow_null": 0,
+                                                    "bidirectional": 0,
+                                                    "multiple": 0,
+                                                    "bidirectional_target": [],
                                                     "parent_repeater": "field_653ff7574ebce"
                                                 }
                                             ],
@@ -2419,6 +2518,26 @@
                             "ui": 1,
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_6553d50afebdb",
+                            "label": "Align top on tablet?",
+                            "name": "align_top_on_tablet",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check if you want the images to align to the top on tablet - recommended if you have split columns of width 3 through 9.",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -2992,5 +3111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699476224
+    "modified": 1699996967
 }

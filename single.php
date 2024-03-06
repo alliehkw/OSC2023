@@ -15,7 +15,6 @@ get_header(); ?>
 
 					<div class="large-7 cell">
 					<header class="article-header">
-						<!-- TO DO : add in "BY" section for single posts if OSC wants -->
 						<?php get_template_part( 'parts/content', 'byline-single' ); ?>	
 						<h2 class="title"><?php the_title(); ?></h2>	
 									

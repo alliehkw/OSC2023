@@ -1,6 +1,7 @@
 <?php
 $bg = get_sub_field('row_bg');
 $vAlign = get_sub_field('vertical_alignment');
+$tabletAlign = get_sub_field('align_top_on_tablet');
 $hAlign = get_sub_field('horizontal_alignment');
 $reverseOrder = get_sub_field('order_on_mobile');
 $customPadding = null;
@@ -11,7 +12,7 @@ if (get_sub_field('custom_padding')) {
 ?>
 <div class="content-block content-grid <?php echo $bg ?> <?php echo $customPadding ?> <?php echo $overlapSibling ?>">
     <div class="grid-container">
-        <div class="grid-x grid-padding-x <?php echo $hAlign ?> <?php echo $vAlign ?> <?php echo $reverseOrder ?>">
+        <div class="grid-x grid-padding-x <?php echo $hAlign ?> <?php echo $vAlign ?> <?php if ($tabletAlign) { echo "tablet-top"; }?> <?php echo $reverseOrder ?>">
            <?php if( have_rows('content') ): while( have_rows('content') ): the_row(); 
                 $layout = get_sub_field('layout');
             ?>
@@ -138,7 +139,8 @@ if (get_sub_field('custom_padding')) {
                                            echo '<button class = "close-button" data-close aria-label = "Close reveal" type = "button">';
                                                 echo '<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M18.5293 6L6.5293 18M6.5293 6L18.5293 18" stroke="#112E3D" stroke-linecap="round" stroke-linejoin="round"/></svg>';
                                            echo '</button>';
-                                           echo '<div class="grid-x grid-padding-x">';
+                                           echo '<div class="modal">'; // NEW
+                                           echo '<div class="grid-x grid-padding-x modal-content">';
                                                echo '<div class="large-3 medium-12 cell image-and-links">';
                                                     echo '<div class="image-modal">';
                                                         echo '<img alt="' . $doctorImage['title'] . '" src="' . $doctorImage['sizes']['medium'] . '" srcset="' . $doctorImage['sizes']['medium_large'] .' '. $doctorImage['sizes']['medium_large-width'] .'w, '. $doctorImage['sizes']['medium'] .' '.  $doctorImage['sizes']['medium-width'] .'w, '. $doctorImage['sizes']['thumbnail'] .' '.  $doctorImage['sizes']['thumbnail-width'] .'w">';
@@ -150,7 +152,13 @@ if (get_sub_field('custom_padding')) {
                                                         echo '</a>';
                                                         if( have_rows('links') ): 
                                                             while( have_rows('links') ): the_row(); 
-                                                            $link = get_sub_field('page_link');
+                                                            $linkType = get_sub_field('link_type');
+                                                            if ($linkType == 'page') :
+                                                                $link = get_sub_field('page_link');
+                                                            else :
+                                                                $category_id = get_sub_field('blog_category_link');
+                                                                $link = get_category_link($category_id);
+                                                            endif;  
                                                             $linkText = get_sub_field('link_name');
                                                             echo '<a target="_self" href="' . esc_url($link) . '" class="cell button" role="button">';
                                                                 echo $linkText;
@@ -179,6 +187,7 @@ if (get_sub_field('custom_padding')) {
                                                     echo '</div>';
                                                echo '</div>';
                                             echo '</div>';
+                                            echo '</div>'; // NEW
                                         echo '</div>';
                                     echo '</div>';
                                     $counter++; 

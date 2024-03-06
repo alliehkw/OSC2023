@@ -15,10 +15,7 @@ get_header(); ?>
 		    		<div class="grid-x grid-padding-x">
 			    
 						<header class="blog-header">
-							<!-- TO DO : delete "get_the_archive..." from the functions folder and the  -->
-							<!-- functions file if not used  -->
-							<!-- <h2 class="page-title"><?php get_the_archive_title();?></h2> -->
-							<h2 class="page-title"><?php the_archive_title();?></h2>
+							<h2 class="page-title">Blog</h2>
 						</header>
 						<div class="medium-12 cell">
 						<?php 
@@ -61,9 +58,7 @@ get_header(); ?>
 							</div>
 							<?php joints_page_navi(); ?>
 						</div>
-						<!-- <div class="medium-3 cell">
-							<?php get_sidebar(); ?>
-						</div> -->
+						<?php get_sidebar(); ?>
 					</div>
 				</div>
 		

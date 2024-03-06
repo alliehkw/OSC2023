@@ -32,5 +32,10 @@ header.header {
 .header-container.loaded {
 	display: flex;
 	opacity: 1; /* Fade in to fully visible */
+	// Special formatting for when the video is playing 
+	&.video {
+		background-color: get-color(gray-06) !important;
+		opacity: 0.8;
+	}
 }
 

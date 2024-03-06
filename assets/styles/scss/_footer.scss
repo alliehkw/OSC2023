@@ -95,14 +95,13 @@ footer.footer {
 					}
 					@include breakpoint (small down) {
 						width: 100%;
-						// max-width: 1000px;
-						// margin-top: 32px;
 					}
 					li.column-title a {
 						font-size: 14px;
 						color: get-color(gray-03);
 						text-transform: uppercase;
-						a:hover {
+						// pointer-events: none;
+						&:hover {
 							font-weight: normal;
 							cursor: text;
 						}

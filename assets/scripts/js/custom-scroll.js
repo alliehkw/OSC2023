@@ -4,6 +4,7 @@ var isSinglePage = pageData.isSinglePage;
 var templateUrl = pageData.templateUrl;
 document.addEventListener("DOMContentLoaded", function () {
   var header = document.querySelector(".sticky-container");
+  // var headerVideo = document.querySelector(".header-container");
   var imageLogo = document.querySelector(".image-logo");
 
   // Function to update the header based on the scroll position
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > 70) {
       header.classList.add("scrolled");
       header.classList.remove("unscrolled");
+      // If we scroll past the video allow the nav bar to change like normal
+      // headerVideo.classList.remove("video");
       imageLogo.src = templateUrl + "/assets/images/Logo-colored-1.svg";
     } else {
       header.classList.remove("scrolled");

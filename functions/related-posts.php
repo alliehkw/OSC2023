@@ -21,7 +21,7 @@ function joints_related_posts() {
         }
         $args = array(
             'category_name' => $cat_arr,
-            'numberposts' => 3, // you can change this to show more
+            'numberposts' => 5, // you can change this to show more
             'post__not_in' => array($post->ID)
         );
     }

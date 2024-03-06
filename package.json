@@ -1,38 +1,38 @@
 {
-  "name": "hkw-2022",
-  "version": "1.0.0",
-  "description": "A WordPress starter theme using Foundation 6",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gvoom/hkw-2022.git"
-  },
-  "author": "HKW",
-  "license": "GPL-2.0 AND MIT",
-  "homepage": "https://github.com/gvoom/hkw-2022.git",
-  "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "browser-sync": "^2.29.3",
-    "cssnano": "^5.1.15",
-    "foundation-sites": "^6.8.1",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-fs-cache": "^0.1.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-replace": "^1.1.4",
-    "gulp-sass": "^5.0.0",
-    "gulp-terser": "^2.1.0",
-    "motion-ui": "^1.2.2",
-    "postcss": "^8.4.31",
-    "sass": "^1.68.0",
-    "what-input": "^5.2.12"
-  },
-  "scripts": {
-    "build": "gulp",
-    "watch": "gulp default",
-    "browsersync": "gulp bs",
-    "update-foundation": "npm install foundation-sites"
-  },
-  "dependencies": {
-    "swiper": "^11.0.3"
+    "name": "hkw-2022",
+    "version": "1.0.0",
+    "description": "A WordPress starter theme using Foundation 6",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/gvoom/hkw-2022.git"
+    },
+    "author": "HKW",
+    "license": "GPL-2.0 AND MIT",
+    "homepage": "https://github.com/gvoom/hkw-2022.git",
+    "devDependencies": {
+      "autoprefixer": "^10.4.16",
+      "browser-sync": "^2.29.3",
+      "cssnano": "^5.1.15",
+      "foundation-sites": "^6.8.1",
+      "gulp": "^4.0.2",
+      "gulp-concat": "^2.6.1",
+      "gulp-fs-cache": "^0.1.0",
+      "gulp-postcss": "^9.0.0",
+      "gulp-replace": "^1.1.4",
+      "gulp-sass": "^5.0.0",
+      "gulp-terser": "^2.1.0",
+      "motion-ui": "^1.2.2",
+      "postcss": "^8.4.31",
+      "sass": "^1.68.0",
+      "what-input": "^5.2.12"
+    },
+    "scripts": {
+      "build": "gulp",
+      "watch": "gulp default",
+      "browsersync": "gulp bs",
+      "update-foundation": "npm install foundation-sites"
+    },
+    "dependencies": {
+      "swiper": "^11.0.3"
+    }
   }
-}

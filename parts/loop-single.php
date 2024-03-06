@@ -1,5 +1,3 @@
-<!-- CONTENT PART OF ARTICLE ITSELF  -->
-
 <?php
 /**
  * Template part for displaying a single post
