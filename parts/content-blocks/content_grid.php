@@ -153,14 +153,18 @@ if (get_sub_field('custom_padding')) {
                                                         if( have_rows('links') ): 
                                                             while( have_rows('links') ): the_row(); 
                                                             $linkType = get_sub_field('link_type');
+                                                            $target="_self";
                                                             if ($linkType == 'page') :
                                                                 $link = get_sub_field('page_link');
+                                                            elseif ($linkType == 'externalLink') :
+                                                                $link = get_sub_field('external_link');
+                                                                $target="_blank";
                                                             else :
                                                                 $category_id = get_sub_field('blog_category_link');
                                                                 $link = get_category_link($category_id);
                                                             endif;  
                                                             $linkText = get_sub_field('link_name');
-                                                            echo '<a target="_self" href="' . esc_url($link) . '" class="cell button" role="button">';
+                                                            echo '<a target="' . $target . '" href="' . esc_url($link) . '" class="cell button" role="button">';
                                                                 echo $linkText;
                                                             echo '</a>';
                                                             endwhile;

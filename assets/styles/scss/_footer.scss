@@ -139,5 +139,20 @@ footer.footer {
 	}
 }
 
-
-
+.sm-links {
+	display: flex;
+	gap: 0.5rem;
+	a {
+		text-decoration: none;
+	}
+	svg {
+		height: 1.5rem;
+		width: 1.5rem;
+		margin-top: 1rem;
+		transition: transform 0.3s ease;
+		border-radius: 0.25rem;
+	}
+	svg:hover {
+		transform: scale(1.1);
+	}
+}

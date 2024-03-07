@@ -1458,7 +1458,8 @@
                                                     },
                                                     "choices": {
                                                         "page": "Page",
-                                                        "taxonomy": "Blog Post"
+                                                        "taxonomy": "Blog Post",
+                                                        "externalLink": "External Link"
                                                     },
                                                     "default_value": false,
                                                     "return_format": "value",
@@ -1531,6 +1532,32 @@
                                                     "bidirectional": 0,
                                                     "multiple": 0,
                                                     "bidirectional_target": [],
+                                                    "parent_repeater": "field_653ff7574ebce"
+                                                },
+                                                {
+                                                    "key": "field_65ea0a985ea9c",
+                                                    "label": "External Link",
+                                                    "name": "external_link",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_654e74619740d",
+                                                                "operator": "==",
+                                                                "value": "externalLink"
+                                                            }
+                                                        ]
+                                                    ],
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
                                                     "parent_repeater": "field_653ff7574ebce"
                                                 }
                                             ]
@@ -3114,5 +3141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709815779
+    "modified": 1709836982
 }
