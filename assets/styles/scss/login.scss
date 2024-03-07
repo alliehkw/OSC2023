@@ -15,7 +15,8 @@ http://codex.wordpress.org/Creating_Admin_Themes
 ******************************************************************/
 
 body.login {
-	
+	background: #eff7fb;
+	color: #1C3A49;
 }
 
 #login {
@@ -25,8 +26,8 @@ body.login {
 // Change the login logo
 .login h1 a {
 	background: url(../images/login-logo.png) no-repeat top center;
+	background-size: contain;
 	width: 326px;
-	height: 67px;
 	text-indent: -9999px;
 	overflow: hidden;
 	padding-bottom: 15px;
@@ -37,11 +38,40 @@ form {
 
 }
 
-body form .input {
+.login input[type=text], .login input.password-input  {
+	background-color: white;
+	border: 0.0625em solid #c4dae3;
+	border-radius: 0.125em;
+	&:focus {
+		border-color: #1C3A49;
+	}
+}
 
+.login .message, .login .notice {
+	border-left-color: #19B69C;
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+	color: #586C75;
+}
+
+.wp-core-ui .button:focus {
+	color: #586C75;
 }
 
 // Login Button Style
 #wp-submit {
-	
+	background-color: #008771;
+	color: white;
+	border: 0.0625em solid #008771;
+	border-radius: 0.125em;
+	font-size: 15px;
+	font-weight: 450;
+	letter-spacing: 0.046875em;
+	text-transform: uppercase;
+	padding: 10px 16px 8px;
+	vertical-align: middle;
+	line-height: 1;
 }
+
