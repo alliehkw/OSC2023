@@ -51,14 +51,14 @@ Compiles and minifies all scripts and styles.
 This script removes files that aren't necessary for the uploaded theme, and zips it for deployment. This script must be run from the /themes/ folder.
 
 ```bash
-$ rm OSC2023.zip
-$ mv OSC2023 _OSC2023
-$ cp -R _OSC2023 OSC2023
-$ cd OSC2023
-$ rm .gitignore README.md package.json package-lock.json gulpfile.js
-$ rm -rf .git node_modules
-$ cd ../
-$ zip -r -X OSC2023.zip OSC2023
-$ rm -rf OSC2023
-$ mv _OSC2023 OSC2023
+rm OSC2023.zip
+mv OSC2023 _OSC2023
+cp -R _OSC2023 OSC2023
+cd OSC2023
+rm .gitignore README.md package.json package-lock.json gulpfile.js
+rm -rf .git node_modules
+cd ../
+zip -r -X OSC2023.zip OSC2023
+rm -rf OSC2023
+mv _OSC2023 OSC2023
 ```
