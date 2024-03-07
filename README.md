@@ -1,25 +1,10 @@
 Currently using Foundation 6.5.3.
 
-HKW 2022 is built using Foundation (get.foundation) and JointsWP
+OSC2023 is built using Foundation (get.foundation) and JointsWP
 
 ## Requirements
 
-HKW 2022 theme requires [Node.js](https://nodejs.org) v6.9.x or newer. This doesn't mean you need to understand Node (or even Gulp) - it's just the steps we need to take to make sure all of our development tools are installed.
-
-## Getting Started
-
-### Download Starter Theme and install dependencies with npm
-
-```bash
-$ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/gvoom/hkw-2022.git
-$ cd hkw-2022
-$ npm install
-```
-
-At this point, HKW 2022 should be installed and fully running on your local machine. If you prefer to install the theme manually, that will work as well - just be sure to run `npm install` after manually moving the files into the `/themes/` directory.
-
-## Working with HKW 2022
+OSC2023 theme requires [Node.js](https://nodejs.org) v6.9.x or newer. This doesn't mean you need to understand Node (or even Gulp) - it's just the steps we need to take to make sure all of our development tools are installed.
 
 ### Watching for Changes
 
@@ -60,3 +45,20 @@ Compiles and minifies all scripts and styles.
 ### Custom Scripts
 
 - `assets/scripts/js/` - place your custom scripts here. Each .JS file will be compiled and concatenated when the build process is ran.
+
+## Packaging Theme Files for Deployment
+
+This script removes files that aren't necessary for the uploaded theme, and zips it for deployment. This script must be run from the /themes/ folder.
+
+```bash
+$ rm OSC2023.zip
+$ mv OSC2023 _OSC2023
+$ cp -R _OSC2023 OSC2023
+$ cd OSC2023
+$ rm .gitignore README.md package.json package-lock.json gulpfile.js
+$ rm -rf .git node_modules
+$ cd ../
+$ zip -r -X OSC2023.zip OSC2023
+$ rm -rf OSC2023
+$ mv _OSC2023 OSC2023
+```
