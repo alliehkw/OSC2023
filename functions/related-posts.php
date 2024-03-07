@@ -46,7 +46,6 @@ function joints_related_posts() {
                     </div>
                 <?php endif; ?>
                 <div class="related-post-text">
-                    <?php get_template_part('parts/content', 'byline'); ?>
                     <h6 class="related-post-link"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h6>
                 </div>
             </li>

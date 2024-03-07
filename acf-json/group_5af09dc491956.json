@@ -181,11 +181,11 @@
                         },
                         {
                             "key": "field_654bf2f09b32e",
-                            "label": "Video URL",
-                            "name": "video_URL",
+                            "label": "Vimeo Embed Code",
+                            "name": "video_embed",
                             "aria-label": "",
-                            "type": "url",
-                            "instructions": "For YouTube videos only. Must have the following format:\r\nhttps:\/\/www.youtube.com\/embed\/**YOU VIDEO ID**\/?autoplay=1\/&mute=1",
+                            "type": "textarea",
+                            "instructions": "Copy and paste the video embed code from your Vimeo video. For best formatting, change the width to \"100%\" and the height to \"auto\".",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -194,7 +194,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": ""
+                            "maxlength": "",
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
                         },
                         {
                             "key": "field_654d5480f5d47",
@@ -674,6 +677,7 @@
                                     "layout": "block",
                                     "button_label": "Add Row",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_5fe39cd14f85d",
@@ -732,8 +736,7 @@
                                             "delay": 0,
                                             "parent_repeater": "field_5fe39ca34f85b"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_5fd3f58cbcd9f",
@@ -839,6 +842,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Accordion Tab",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_632b579451ee7",
@@ -882,8 +886,7 @@
                                             "media_upload": 1,
                                             "parent_repeater": "field_632b578151ee6"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_652fde3b04d11",
@@ -931,6 +934,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Button",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_652fde6204d13",
@@ -1102,8 +1106,7 @@
                                             "placeholder": "",
                                             "parent_repeater": "field_652fde5904d12"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_652ffab0d1c00",
@@ -1176,6 +1179,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Statistic",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_65317df4498df",
@@ -1219,8 +1223,7 @@
                                             "delay": 0,
                                             "parent_repeater": "field_65317dda498de"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_653fed4e6566f",
@@ -1297,6 +1300,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Doctor",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_653fed7465671",
@@ -1415,6 +1419,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Link",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_653fed5a65670",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_653ff86507587",
@@ -1528,8 +1533,7 @@
                                                     "bidirectional_target": [],
                                                     "parent_repeater": "field_653ff7574ebce"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_653fed5a65670"
+                                            ]
                                         },
                                         {
                                             "key": "field_653ff7a34ebd0",
@@ -1572,6 +1576,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Image",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_653fed5a65670",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_653ff7b84ebd2",
@@ -1599,11 +1604,9 @@
                                                     "preview_size": "medium",
                                                     "parent_repeater": "field_653ff7ac4ebd1"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_653fed5a65670"
+                                            ]
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_6541325ed5ef0",
@@ -1652,6 +1655,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Row",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_65413270d5ef2",
@@ -1702,8 +1706,7 @@
                                             "preview_size": "medium",
                                             "parent_repeater": "field_65413267d5ef1"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_65494ebd9c927",
@@ -1793,6 +1796,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Row",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_65494f1ad1390",
@@ -1878,8 +1882,7 @@
                                             "first_day": 0,
                                             "parent_repeater": "field_65494ef79c92a"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 },
                                 {
                                     "key": "field_654a352f404ac",
@@ -1955,6 +1958,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Row",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_5d09447ed3f29",
                                     "sub_fields": [
                                         {
                                             "key": "field_654a359bb79f0",
@@ -2097,6 +2101,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Media",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_654a37b1ee610",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_654a368fc6543",
@@ -2145,8 +2150,7 @@
                                                     "mime_types": "",
                                                     "parent_repeater": "field_654a35edb79f4"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_654a37b1ee610"
+                                            ]
                                         },
                                         {
                                             "key": "field_654a36e8c6544",
@@ -2410,8 +2414,7 @@
                                             "placeholder": "",
                                             "parent_repeater": "field_654a37b1ee610"
                                         }
-                                    ],
-                                    "parent_repeater": "field_5d09447ed3f29"
+                                    ]
                                 }
                             ]
                         },
@@ -3111,5 +3114,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699996967
+    "modified": 1709815779
 }

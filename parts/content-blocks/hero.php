@@ -19,24 +19,22 @@ $heroVideo = get_sub_field('video_short_code');
 		echo '</div>';
 	echo '</div>';
 	else :
-		$videoURL = get_sub_field('video_URL');
+		$videoEmbed = get_sub_field('video_embed');
 		$poster = get_sub_field('video_poster')['url'];
 
-		echo '<div class="video-container">';
-
-		echo '<iframe id="videoIframe" src="'. $videoURL .'" frameborder="0" allowfullscreen></iframe>';
-
-		echo '<div class="video-poster" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('. $poster .'); background-size: cover; z-index: 2;">';
-			echo '<div class="text-overlay" style="display: flex; align-items: center; justify-content: center; height: 100%; z-index: 3;">';
+	echo '<div class="video-container">';
+		echo $videoEmbed;
+		echo '<div class="video-poster" style="background-image: url('. $poster .')">';
+		echo '<div class="text-overlay" style="display: flex; align-items: center; justify-content: center; height: 100%; z-index: 3;">';
 				echo '<div class="text-content-video-hero">';
 					echo $title;
+					echo '<div class="play-button">';
+						echo '<div class="button-triangle">
+					</div>';
+				echo '</div>';
 				echo '</div>';
 			echo '</div>';
-			echo '<div class="play-button">';
-				echo '<div class="button-triangle"></div>';
-			echo '</div>';
 		echo '</div>';
-
-		echo '</div>';
+	echo '</div>';
 endif; 
 ?>

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var poster = document.querySelector(".video-poster");
-  var iframe = document.getElementById("videoIframe");
+  var container = document.querySelector(".video-container");
+  var iframe = container.querySelector("iframe");
   var playButton = document.querySelector(".play-button");
   var headerContainer = document.querySelector(".header-container");
   var isVideoPlaying = false; // Flag to track video playing status
@@ -32,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       manageHeaderClass();
     }
 
-    // Add event listeners to both the poster and the play button
-    poster.addEventListener("click", startVideo);
+    // Add event listener to the play button
     if (playButton) {
       playButton.addEventListener("click", startVideo);
     }

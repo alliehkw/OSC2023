@@ -27,7 +27,6 @@ $grid_columns = 3; ?>
 				<?php endif; ?>
 				
 				<header class="article-header">
-					<?php get_template_part( 'parts/content', 'byline' ); ?>
 					<div class="title-box">    
 						<h5 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h5>    
 					</div>

@@ -139,6 +139,7 @@ div::-webkit-scrollbar {
 	line-height: 106.25%;
     font-weight: 400;
     font-style: normal;
+	gap: 2rem;
     @include breakpoint(medium down) {
         font-size: 48px;
 		padding: 16px;
@@ -170,25 +171,33 @@ div::-webkit-scrollbar {
 }
 
 .play-button {
-	position: absolute; 
-	margin-top: 5%;
-	top: 50%; 
-	left: 50%; 
-	transform: translate(-50%, -50%); 
 	cursor: pointer;
-	width: 64px;
-	height: 64px;
+	width: 15%;
+	height: 15%;
+	max-width: 4rem;
+	max-height: 4rem;
 	@include breakpoint (large up) {
-		width: 80px;
-		height: 80px;
-	}
-	@include breakpoint (medium down) {
-		margin-top: 10%;
-	}
-	@include breakpoint (small down) {
-		margin-top: 15%;
+		max-width: 80px;
+		max-height: 80px;
 	}
 	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='81' height='80' viewBox='0 0 81 80' fill='none'%3E%3Crect x='0.332031' width='80' height='80' rx='2' fill='white'/%3E%3Cpath d='M50.4258 40L35.2855 48.7412L35.2855 31.2588L50.4258 40Z' fill='black'/%3E%3C/svg%3E");
+}
+
+// This allows the nav bar to still be visible while the video is playing
+.responsive-embed.widescreen {
+	padding-bottom: 46%;
+	margin-top: 4rem;
+}
+
+.video-poster {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100vh; 
+	background-size: cover; 
+	z-index: 2;
+	margin-top: -4rem; // Ensure that this inversly matches the margin-top/bottom for the .responsive-embed.widescreen
 }
   
 
