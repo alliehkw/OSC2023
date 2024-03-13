@@ -8,41 +8,52 @@ get_header();
 <div class="content">
     <!-- Display Parent Page Content -->
     <?php
-        if($post->post_parent) {
-            $parent = get_post($post->post_parent);
-            if ( $parent ) : ?>
-                <main class="main cell small-12 " role="main">
-                    <?php
-                        // Temporarily set the global post object to the parent post
-                        $temp_post = $post;
-                        $post = $parent;
+    if ($post->post_parent) {
+        $parent = get_post($post->post_parent);
+        if ($parent) :
+            ?>
+            <main class="main cell small-12 " role="main">
+                <?php
+                // Temporarily set the global post object to the parent post
+                $temp_post = $post;
+                $post = $parent;
 
-                        // Load the 'parts/loop' template part
-                        get_template_part('parts/loop', 'page');
+                // Load the 'parts/loop' template part
+                get_template_part('parts/loop', 'page');
 
-                        // Restore the global post object
-                        $post = $temp_post;
-                    ?>
-                </main>
-            <?php endif;
-        }
+                // Restore the global post object
+                $post = $temp_post;
+                ?>
+            </main>
+        <?php endif;
+    }
     ?>
     <div class="content-block" id="sidebar">
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <!-- Sidebar Logic -->
                 <?php
-                if( have_rows('content_blocks') ):
+                if (have_rows('content_blocks')) :
                     // Loop through the rows of data
-                    while ( have_rows('content_blocks') ) : the_row();
+                    while (have_rows('content_blocks')) : the_row();
                         // Check for the 'Sidebar Nav' layout or subfield
-                        if( get_row_layout() == 'sidebar_nav' ) {
+                        if (get_row_layout() == 'sidebar_nav') {
                             // Get the 'Sidebar Nav' select subfield value
                             $selected_sidebar = get_sub_field('sidebar_nav');
                             if ($selected_sidebar && is_active_sidebar($selected_sidebar)) {
-                                // The sidebar is different for desktop and tablet and mobile. This is handled in the
-                                // individual sidebar php files and with css display: none
-                                get_sidebar($selected_sidebar);
+                                ?>
+                                <div class="cell medium-12 large-3 sidebar-nav desktop" data-sticky-container>
+                                    <div class="sticky navbox" data-sticky data-top-anchor="top-anchor:top" data-btm-anchor="bottom-anchor:bottom" data-options="marginTop:6;">
+                                        <?php dynamic_sidebar($selected_sidebar); ?>
+                                    </div>
+                                </div>
+
+                                <div class="cell medium-12 large-3 sidebar-nav tablet" data-sticky-container>
+                                    <div class="sticky navbox" data-options="marginTop:6;">
+                                        <?php dynamic_sidebar($selected_sidebar); ?>
+                                    </div>
+                                </div>
+                                <?php
                             }
                         }
                     endwhile;
@@ -54,7 +65,7 @@ get_header();
                     <main class="main cell medium-12 large-9 child-content" role="main">
                         <div id="top-anchor"></div>
                         <?php while (have_posts()) : the_post(); ?>
-                            <?php get_template_part( 'parts/loop', 'page' ); ?>
+                            <?php get_template_part('parts/loop', 'page'); ?>
                         <?php endwhile; ?>
                         <div id="bottom-anchor"></div>
                     </main>

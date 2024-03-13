@@ -189,6 +189,22 @@ div::-webkit-scrollbar {
 	margin-top: 4rem;
 }
 
+.media-item-video {
+	.flex-video.research {
+		padding-bottom: 0;
+		height: fit-content;
+		.responsive-embed.widescreen, .responsive-embed {
+			margin-top: 0;
+		}
+	}	
+	.caption {
+		color: #586c75;
+		font-size: 16px;
+		margin-top: 12px;
+		text-align: center;
+	}
+}
+
 .video-poster {
 	position: absolute; 
 	top: 0; 

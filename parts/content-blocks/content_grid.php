@@ -265,7 +265,7 @@ if (get_sub_field('custom_padding')) {
                             echo '<div>';
                         echo '</div>';
                         echo '</div>';
-                    elseif($contentType == 'research') :
+                    elseif ($contentType == 'research') :
                         $display_type = get_sub_field('display_type');
                         echo '<div class="grid-x grid-padding-x research ' . $display_type . '">';
                         if ($display_type == "row_line"):
@@ -275,53 +275,67 @@ if (get_sub_field('custom_padding')) {
                                     $mediaPresent = get_sub_field('include_media_with_post');
                                     $externalLinkPresent = get_sub_field('include_external_link');
                                     echo '<ul class="cell xlarge-12 research-info">';
-                                        echo '<li class="research-title">';
-                                            if ($externalLinkPresent == 1) :
-                                                $externalLink = get_sub_field('external_link');
-                                                echo '<a href="' . $externalLink . '" class="external-link" target="_blank">';
-                                                    echo $title;
-                                                echo '</a>';
-                                            else : 
-                                                echo $title;
-                                            endif;
-                                        if ($mediaPresent && have_rows('media')):
-                                            echo '<div class="medias">';
-                                            while (have_rows('media')): the_row();
+                                    echo '<li class="research-title">';
+                                    if ($externalLinkPresent == 1) :
+                                        $externalLink = get_sub_field('external_link');
+                                        echo '<a href="' . $externalLink . '" class="external-link" target="_blank">';
+                                        echo $title;
+                                        echo '</a>';
+                                    else : 
+                                        echo $title;
+                                    endif;
+                                    if ($mediaPresent && have_rows('media')):
+                                        echo '<div class="medias">';
+                                        while (have_rows('media')): the_row();
+                                        $media_type = get_sub_field('media_type');
+                                            if ($media_type === 'image') :
                                                 $cover_image = get_sub_field('cover_image');
                                                 $media_upload = get_sub_field('media');
-                                                    $image_url = $cover_image['url'];
-                                                    $media_item_title = $cover_image['title'];
-                                                    if ($media_upload) :
-                                                        echo '<a href="' . $media_upload['url'] . '" target="_blank" class="media-item-with-link">'; 
-                                                            echo '<div class="media-item">';
-                                                                echo '<div class="media-item-image">';
-                                                                    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
-                                                                echo '</div>';
-                                                                echo '<div class="media-title">';
-                                                                    echo esc_html($media_item_title);
-                                                                echo '</div>';
-                                                            echo '</div>';
-                                                        echo '</a>';
-                                                    else : 
-                                                        echo '<div class="media-item">';
-                                                            echo '<div class="media-item-image">';
-                                                                echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
-                                                            echo '</div>';
-                                                            echo '<div class="media-title">';
-                                                                echo esc_html($media_item_title);
-                                                            echo '</div>';
-                                                        echo '</div>';
-                                                    endif;
-                                            endwhile;
-                                            echo '</div>';
-                                        endif;
-                                        echo '</li>';
+                                                $image_url = $cover_image['url'];
+                                                $media_item_title = $cover_image['title'];
+                                                if ($media_upload) :
+                                                    echo '<a href="' . $media_upload['url'] . '" target="_blank" class="media-item-with-link">'; 
+                                                    echo '<div class="media-item">';
+                                                    echo '<div class="media-item-image">';
+                                                    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
+                                                    echo '</div>';
+                                                    echo '<div class="media-title">';
+                                                    echo esc_html($media_item_title);
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                    echo '</a>';
+                                                else : 
+                                                    echo '<div class="media-item">';
+                                                    echo '<div class="media-item-image">';
+                                                    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
+                                                    echo '</div>';
+                                                    echo '<div class="media-title">';
+                                                    echo esc_html($media_item_title);
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                endif;
+                                            elseif ($media_type === 'video') :
+                                                $theEmbed = get_sub_field('embed');
+                                                $theCaption = get_sub_field('caption');
+                                                echo '<div class="media-item">';
+                                                    echo '<div class="media-item-video">'; ?>
+                                                    <div class="embed flex-video research">
+                                                        <?php echo $theEmbed ?>
+                                                    </div>
+                                                    <p class="caption"><?php echo $theCaption ?></p> <?php
+                                                    echo '</div>';
+                                                echo '</div>';
+                                            endif;
+                                        endwhile;
+                                        echo '</div>';
+                                    endif;
+                                    echo '</li>';
                                     echo '</ul>';
                                 endwhile;
                             endif;
-                        elseif($display_type == "card_block") :
-                            if( have_rows('research') ): 
-                                while( have_rows('research') ): the_row(); 
+                        elseif ($display_type == "card_block") :
+                            if (have_rows('research')): 
+                                while (have_rows('research')): the_row(); 
                                     $title = get_sub_field('title');
                                     $author = get_sub_field('author');
                                     $summary = get_sub_field('summary');
@@ -332,103 +346,104 @@ if (get_sub_field('custom_padding')) {
                                     if ($externalLinkPresent == 1) : 
                                         $linkName = get_sub_field('external_link');
                                     endif;
-                                        echo '<div class="cell medium-6 small-12 research-info ">';
-                                            echo '<a href="' . $linkName . '" class="external-link ' . $linkClass . '" target="_blank" onclick="if(this.href === \'#\') { event.preventDefault(); }">';
-                                                echo '<div class="card-block">';
-                                                    echo '<div class="research-title">';
-                                                        echo $title;
-                                                    echo '</div>';
-                                                    echo '<div class="author">';
-                                                        echo $author;
-                                                    echo '</div>';
+                                    echo '<div class="cell medium-6 small-12 research-info ">';
+                                    echo '<a href="' . $linkName . '" class="external-link ' . $linkClass . '" target="_blank" onclick="if(this.href === \'#\') { event.preventDefault(); }">';
+                                    echo '<div class="card-block">';
+                                    echo '<div class="research-title">';
+                                    echo $title;
+                                    echo '</div>';
+                                    echo '<div class="author">';
+                                    echo $author;
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '<div class="research-title">';
+                                    echo $title;
+                                    echo '</div>';
+                                    echo '<div class="summary">';
+                                    echo $summary;
+                                    echo '</div>';
+                                    echo '</a>';
+                                    if ($mediaPresent && have_rows('media')):
+                                        echo '<div class="medias">';
+                                        while (have_rows('media')): the_row();
+                                            $cover_image = get_sub_field('cover_image');
+                                            $media_upload = get_sub_field('media');
+                                            $image_url = $cover_image['url'];
+                                            $media_item_title = $cover_image['title'];
+                                            if ($media_upload) :
+                                                echo '<a href="' . $media_upload['url'] . '" target="_blank" class="media-item-with-link">'; 
+                                                echo '<div class="media-item">';
+                                                echo '<div class="media-item-image">';
+                                                echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
                                                 echo '</div>';
-                                                echo '<div class="research-title">';
-                                                    echo $title;
+                                                echo '<div class="media-title">';
+                                                echo esc_html($media_item_title);
                                                 echo '</div>';
-                                                echo '<div class="summary">';
-                                                    echo $summary;
                                                 echo '</div>';
-                                            echo '</a>';
-                                            if ($mediaPresent && have_rows('media')):
-                                                echo '<div class="medias">';
-                                                while (have_rows('media')): the_row();
-                                                    $cover_image = get_sub_field('cover_image');
-                                                    $media_upload = get_sub_field('media');
-                                                        $image_url = $cover_image['url'];
-                                                        $media_item_title = $cover_image['title'];
-                                                        if ($media_upload) :
-                                                            echo '<a href="' . $media_upload['url'] . '" target="_blank" class="media-item-with-link">'; 
-                                                                echo '<div class="media-item">';
-                                                                    echo '<div class="media-item-image">';
-                                                                        echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
-                                                                    echo '</div>';
-                                                                    echo '<div class="media-title">';
-                                                                        echo esc_html($media_item_title);
-                                                                    echo '</div>';
-                                                                echo '</div>';
-                                                            echo '</a>';
-                                                        else : 
-                                                            echo '<div class="media-item">';
-                                                                echo '<div class="media-item-image">';
-                                                                    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
-                                                                echo '</div>';
-                                                                echo '<div class="media-title">';
-                                                                    echo esc_html($media_item_title);
-                                                                echo '</div>';
-                                                            echo '</div>';
-                                                        endif;
-                                                endwhile;
+                                                echo '</a>';
+                                            else : 
+                                                echo '<div class="media-item">';
+                                                echo '<div class="media-item-image">';
+                                                echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($media_item_title) . '">';
+                                                echo '</div>';
+                                                echo '<div class="media-title">';
+                                                echo esc_html($media_item_title);
+                                                echo '</div>';
                                                 echo '</div>';
                                             endif;
+                                        endwhile;
                                         echo '</div>';
+                                    endif;
+                                    echo '</div>';
                                 endwhile;
                             endif;
-                            elseif($display_type == "publications") :
-                                if( have_rows('research') ): 
-                                    while( have_rows('research') ): the_row(); 
-                                        $title = get_sub_field('title');
-                                        $subtext = get_sub_field('subtext');
-                                        $cover_image = get_sub_field('cover_image_publication');
-                                        $externalLinkPresent = get_sub_field('link_publication');
-                                        $linkType = get_sub_field('link_type');
-                                        $linkClass = $externalLinkPresent == 1 ? "active-link" : "not-a-link";
-                                        $linkName = "#";
-                                        if ($externalLinkPresent == 1 && $linkType == "external_link") : 
-                                            $linkName = get_sub_field('external_link_publications');
-                                        elseif ($externalLinkPresent == 1 && $linkType == "pdf") :
-                                            $PDF = get_sub_field('media_publication');
-                                            $linkName = $PDF['url'];
-                                        endif;
-                                            echo '<div class="cell large-4 medium-12 publications">';
-                                                echo '<a href="' . $linkName . '" class="external-link ' . $linkClass . '" target="_blank" onclick="if(this.href === \'#\') { event.preventDefault(); }">';
-                                                    echo '<div class="single-publication">';    
-                                                    if ($cover_image) :
-                                                            echo '<div class="preview-block image">';
-                                                                echo '<img src="' . $cover_image['url'] . '"/>'; 
-                                                            echo '</div>';
-                                                        else :
-                                                            echo '<div class="preview-block">';
-                                                                echo '<div class="title-container">';
-                                                                    echo $title;
-                                                                echo '</div>';
-                                                            echo '</div>';
-                                                        endif;
-                                                        echo '<div class="content-pub">';
-                                                            echo '<div class="title-below">';
-                                                                echo $title;
-                                                            echo '</div>';
-                                                            echo '<div class="subtext-below">';
-                                                                echo $subtext;
-                                                            echo '</div>';
-                                                        echo '</div>';
-                                                    echo '</div>';
-                                                echo '</a>';
-                                            echo '</div>';
-                                    endwhile;
-                                endif;
+                        elseif ($display_type == "publications") :
+                            if (have_rows('research')): 
+                                while (have_rows('research')): the_row(); 
+                                    $title = get_sub_field('title');
+                                    $subtext = get_sub_field('subtext');
+                                    $cover_image = get_sub_field('cover_image_publication');
+                                    $externalLinkPresent = get_sub_field('link_publication');
+                                    $linkType = get_sub_field('link_type');
+                                    $linkClass = $externalLinkPresent == 1 ? "active-link" : "not-a-link";
+                                    $linkName = "#";
+                                    if ($externalLinkPresent == 1 && $linkType == "external_link") : 
+                                        $linkName = get_sub_field('external_link_publications');
+                                    elseif ($externalLinkPresent == 1 && $linkType == "pdf") :
+                                        $PDF = get_sub_field('media_publication');
+                                        $linkName = $PDF['url'];
+                                    endif;
+                                    echo '<div class="cell large-6 medium-12 publications">';
+                                    echo '<a href="' . $linkName . '" class="external-link ' . $linkClass . '" target="_blank" onclick="if(this.href === \'#\') { event.preventDefault(); }">';
+                                    echo '<div class="single-publication">';    
+                                    if ($cover_image) :
+                                        echo '<div class="preview-block image">';
+                                        echo '<img src="' . $cover_image['url'] . '"/>'; 
+                                        echo '</div>';
+                                    else :
+                                        echo '<div class="preview-block">';
+                                        echo '<div class="title-container">';
+                                        echo $title;
+                                        echo '</div>';
+                                        echo '</div>';
+                                    endif;
+                                    echo '<div class="content-pub">';
+                                    echo '<div class="title-below">';
+                                    echo $title;
+                                    echo '</div>';
+                                    echo '<div class="subtext-below">';
+                                    echo $subtext;
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</a>';
+                                    echo '</div>';
+                                endwhile;
                             endif;
+                        endif;
                         echo '</div>';
                     endif;
+                                  
                 ?>
             </div>
             <?php endwhile; endif; ?>

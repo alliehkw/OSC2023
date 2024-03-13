@@ -2122,14 +2122,40 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "layout": "table",
+                                            "layout": "block",
                                             "min": 0,
                                             "max": 0,
                                             "collapsed": "",
                                             "button_label": "Add Media",
                                             "rows_per_page": 20,
-                                            "parent_repeater": "field_654a37b1ee610",
                                             "sub_fields": [
+                                                {
+                                                    "key": "field_65f1cdc797a38",
+                                                    "label": "Media Type",
+                                                    "name": "media_type",
+                                                    "aria-label": "",
+                                                    "type": "select",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "choices": {
+                                                        "image": "Image \/ PDF-image",
+                                                        "video": "Video"
+                                                    },
+                                                    "default_value": false,
+                                                    "return_format": "value",
+                                                    "multiple": 0,
+                                                    "allow_null": 0,
+                                                    "ui": 0,
+                                                    "ajax": 0,
+                                                    "placeholder": "",
+                                                    "parent_repeater": "field_654a35edb79f4"
+                                                },
                                                 {
                                                     "key": "field_654a368fc6543",
                                                     "label": "Cover Image",
@@ -2138,7 +2164,15 @@
                                                     "type": "image",
                                                     "instructions": "Include the title in the file - this will be displayed on the page. If media is a PDF upload the cover image here.",
                                                     "required": 0,
-                                                    "conditional_logic": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_65f1cdc797a38",
+                                                                "operator": "==",
+                                                                "value": "image"
+                                                            }
+                                                        ]
+                                                    ],
                                                     "wrapper": {
                                                         "width": "",
                                                         "class": "",
@@ -2164,7 +2198,15 @@
                                                     "type": "file",
                                                     "instructions": "Upload PDFs here. This will allow the cover image to link to the PDF.",
                                                     "required": 0,
-                                                    "conditional_logic": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_65f1cdc797a38",
+                                                                "operator": "==",
+                                                                "value": "image"
+                                                            }
+                                                        ]
+                                                    ],
                                                     "wrapper": {
                                                         "width": "",
                                                         "class": "",
@@ -2176,8 +2218,64 @@
                                                     "max_size": "",
                                                     "mime_types": "",
                                                     "parent_repeater": "field_654a35edb79f4"
+                                                },
+                                                {
+                                                    "key": "field_65f1ce2097a39",
+                                                    "label": "Video Embed",
+                                                    "name": "embed",
+                                                    "aria-label": "",
+                                                    "type": "oembed",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_65f1cdc797a38",
+                                                                "operator": "==",
+                                                                "value": "video"
+                                                            }
+                                                        ]
+                                                    ],
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "width": "",
+                                                    "height": "",
+                                                    "parent_repeater": "field_654a35edb79f4"
+                                                },
+                                                {
+                                                    "key": "field_65f1d311fcaa1",
+                                                    "label": "Video Caption",
+                                                    "name": "caption",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": [
+                                                        [
+                                                            {
+                                                                "field": "field_65f1cdc797a38",
+                                                                "operator": "==",
+                                                                "value": "video"
+                                                            }
+                                                        ]
+                                                    ],
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "parent_repeater": "field_654a35edb79f4"
                                                 }
-                                            ]
+                                            ],
+                                            "parent_repeater": "field_654a37b1ee610"
                                         },
                                         {
                                             "key": "field_654a36e8c6544",
@@ -3141,5 +3239,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709836982
+    "modified": 1710349211
 }

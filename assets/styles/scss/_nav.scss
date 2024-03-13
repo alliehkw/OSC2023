@@ -385,7 +385,7 @@ div.sticky-container.scrolled {
 // SPECIAL FORMATTING HOME PAGE NAV BAR --> TOP/UNSCROLLED
 div.homepage-class.sticky-container, div.homepage-class.sticky-container.unscrolled  {
     .header-container {
-        background-color: transparent;
+        background-color: rgb(0, 0, 0, .5);
         transition: background-color 0.3s ease-in-out;
     }
     .menu li.nav-button.high-contrast a {
