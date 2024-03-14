@@ -79,7 +79,7 @@
 		    					</nav>
 								<div class="bottom-footer">
 									<div class="fine-print">
-										<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Spokane Orthopedic Care | Orthopedic Specialists in Spokane.</p>
+										<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Spokane Orthopaedic Care | Orthopaedic Specialists in Spokane.</p>
 									</div>
 									<div class="privacy-policy">
 										<?php $privacy_policy = get_field('privacy_policy', 'options'); 
