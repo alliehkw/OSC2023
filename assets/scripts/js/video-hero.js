@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   var poster = document.querySelector(".video-poster");
-  var container = document.querySelector(".video-container");
+  var container = document.querySelector(".video-container-hero");
   var iframe = container.querySelector("iframe");
   var playButton = document.querySelector(".play-button");
   var headerContainer = document.querySelector(".header-container");
   var isVideoPlaying = false; // Flag to track video playing status
+  var player = null; // Variable to store the Vimeo player instance
 
   // Function to manage header class based on scroll position and video status
   if (poster) {
@@ -24,12 +25,34 @@ document.addEventListener("DOMContentLoaded", function () {
       // Set the iframe to display
       iframe.style.display = "block";
 
-      // Change the `src` to start the video
-      iframe.src =
-        iframe.src + (iframe.src.includes("?") ? "&" : "?") + "autoplay=1";
+      // Initialize the Vimeo player
+      player = new Vimeo.Player(iframe);
 
-      // Set isVideoPlaying to true and manage header class immediately
-      isVideoPlaying = true;
+      // Play the video
+      player.play().then(function () {
+        // Video started playing
+        isVideoPlaying = true;
+        manageHeaderClass();
+      });
+
+      // Add event listener for ended event
+      player.on("ended", function () {
+        handleVideoEnd();
+      });
+    }
+
+    // Function to handle video end
+    function handleVideoEnd() {
+      // Show the poster and play button
+      poster.style.display = "block";
+      playButton.style.display = "block";
+      // Hide the iframe
+      iframe.style.display = "none";
+
+      // Set isVideoPlaying to false
+      isVideoPlaying = false;
+
+      // Manage header class immediately
       manageHeaderClass();
     }
 

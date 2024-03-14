@@ -22,7 +22,7 @@ $heroVideo = get_sub_field('video_short_code');
 		$videoEmbed = get_sub_field('video_embed');
 		$poster = get_sub_field('video_poster')['url'];
 
-	echo '<div class="video-container">';
+	echo '<div class="video-container-hero">';
 		echo $videoEmbed;
 		echo '<div class="video-poster" style="background-image: url('. $poster .')">';
 		echo '<div class="text-overlay" style="display: flex; align-items: center; justify-content: center; height: 100%; z-index: 3;">';

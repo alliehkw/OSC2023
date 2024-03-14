@@ -58,3 +58,10 @@ require_once(get_template_directory().'/functions/get-the-archive-title.php');
 // Include the custom-scroll.php file to detect our scroll position
 require get_template_directory() . '/functions/custom-scroll.php';
 
+// Include vimeo api so we can detect when the home page video ends and bring back the poster 
+function enqueue_vimeo_player_api() {
+    wp_enqueue_script('vimeo-player-api', 'https://player.vimeo.com/api/player.js', array(), null, false);
+}
+add_action('wp_enqueue_scripts', 'enqueue_vimeo_player_api');
+
+

@@ -533,6 +533,27 @@
                                     "parent_repeater": "field_5d09447ed3f29"
                                 },
                                 {
+                                    "key": "field_65f2ffb92de89",
+                                    "label": "Embed Caption",
+                                    "name": "caption",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_5d09447ed3f29"
+                                },
+                                {
                                     "key": "field_5fcff3471a8fe",
                                     "label": "Image",
                                     "name": "",
@@ -3239,5 +3260,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710349211
+    "modified": 1710424018
 }
